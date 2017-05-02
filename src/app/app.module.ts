@@ -11,13 +11,15 @@ import { ShowHideBarComponent } from './show-hide-bar/show-hide-bar.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BackgroundColorPickerComponent } from './components/color-picker/background-color-picker/background-color-picker.component';
 import { ColorPickerColumnComponent } from './components/color-picker/color-picker-column/color-picker-column.component';
+import { PixelColorPickerComponent } from './components/color-picker/pixel-color-picker/pixel-color-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowHideBarComponent,
     BackgroundColorPickerComponent,
-    ColorPickerColumnComponent
+    ColorPickerColumnComponent,
+    PixelColorPickerComponent
   ],
   imports: [
     BrowserModule,
