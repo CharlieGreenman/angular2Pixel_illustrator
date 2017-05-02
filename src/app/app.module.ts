@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BackgroundColorPickerComponent } from './components/color-picker/background-color-picker/background-color-picker.component';
 import { ColorPickerColumnComponent } from './components/color-picker/color-picker-column/color-picker-column.component';
 import { PixelColorPickerComponent } from './components/color-picker/pixel-color-picker/pixel-color-picker.component';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PixelColorPickerComponent } from './components/color-picker/pixel-color
     ShowHideBarComponent,
     BackgroundColorPickerComponent,
     ColorPickerColumnComponent,
-    PixelColorPickerComponent
+    PixelColorPickerComponent,
+    ColorPickerComponent
   ],
   imports: [
     BrowserModule,
