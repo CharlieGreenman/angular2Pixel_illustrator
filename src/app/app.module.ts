@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ColorPickerModule } from './components/color-picker/color-picker.module';
 
 import { AppComponent } from './app.component';
 
@@ -19,6 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     FormsModule,
     HttpModule,
+    ColorPickerModule,
     StoreModule.provideStore({environment}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
