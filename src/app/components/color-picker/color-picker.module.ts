@@ -17,7 +17,9 @@ import { ColorPickerColumnComponent } from './color-picker-column/color-picker-c
     ColorPickerColumnComponent,
     ColorPickerComponent
   ],
-  providers: [],
-  bootstrap: [ColorPickerComponent]
+  exports: [
+    ColorPickerComponent
+  ],
+  providers: []
 })
 export class ColorPickerModule { }
