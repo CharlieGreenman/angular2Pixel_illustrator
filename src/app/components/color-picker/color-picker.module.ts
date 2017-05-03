@@ -14,7 +14,8 @@ import { ColorPickerColumnComponent } from './color-picker-column/color-picker-c
   declarations: [
     BackgroundColorPickerComponent,
     PixelColorPickerComponent,
-    ColorPickerColumnComponent
+    ColorPickerColumnComponent,
+    ColorPickerComponent
   ],
   providers: [],
   bootstrap: [ColorPickerComponent]
