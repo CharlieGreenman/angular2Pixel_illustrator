@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ColorPickerColumnComponent implements OnInit {
 
   constructor() { }
+    value = "255";
 
   ngOnInit() {
 
