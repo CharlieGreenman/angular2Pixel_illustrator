@@ -8,16 +8,14 @@
 .column{
   display: flex;
   flex-direction: column;
-}
+  &--R, &--R input{
+    color: red;
+  }
+  &--G, &--G input{
+    color: green;
+  }
+  &--B, &--B input{
+    color: blue;
+  }
 
-.letter-R {
-  color: red;
-}
-
-.letter-G {
-  color: green;
-}
-
-.letter-B {
-  color: blue;
 }
