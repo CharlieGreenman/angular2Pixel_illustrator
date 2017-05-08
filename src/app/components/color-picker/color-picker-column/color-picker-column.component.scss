@@ -8,6 +8,8 @@
 .column{
   display: flex;
   flex-direction: column;
+  text-align: center;
+  width: 100px;
   &--R, &--R input{
     color: red;
   }
