@@ -3,7 +3,8 @@
     <h3 class="BackgroundColorPicker__title">Background Color</h3>
     <div class = "BackgroundColorPicker__header">
       <label class="BackgroundColorPicker__label">Hex</label>
-      <input class="BackgroundColorPicker__input" type="text" value="#191919" />
+      <input class="BackgroundColorPicker__input" type="text" value="#191919"
+      (keypress)="colorChanged()"/>
     </div>
     <div class="color_bar"> </div>
     <div class="BackgroundColorPicker__RGB">

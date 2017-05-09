@@ -9,6 +9,9 @@ import { Store } from '@ngrx/store';
 })
 export class BackgroundColorPickerComponent implements OnInit {
   colors;
+  colorChanged() {
+    console.log('color changed');
+  }
 
   constructor(store: Store<any>) {
     this.colors = store.select('colors');
@@ -16,6 +19,7 @@ export class BackgroundColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }
