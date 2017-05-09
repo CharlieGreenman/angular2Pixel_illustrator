@@ -10,6 +10,7 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
 
 import { StoreModule } from '@ngrx/store';
 import { environment } from './reducers/show-hide';
+import { colors } from './reducers/color-picker';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -23,7 +24,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     FormsModule,
     HttpModule,
     ColorPickerModule,
-    StoreModule.provideStore({environment}),
+    StoreModule.provideStore({environment, colors}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
     })
