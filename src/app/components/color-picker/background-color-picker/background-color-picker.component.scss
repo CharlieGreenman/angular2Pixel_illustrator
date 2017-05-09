@@ -2,6 +2,30 @@
   color: white;
 }
 
-.RGBBackground {
+.BackgroundColorPicker__title {
+  text-align: center;
+}
+
+.BackgroundColorPicker__header {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.BackgroundColorPicker__label {
+  color: yellow;
+  font-size: 20px;
+}
+
+.BackgroundColorPicker__input {
+  background: none;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+.BackgroundColorPicker__RGB {
+  display: flex;
+  margin-top: 10px;
 }

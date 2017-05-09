@@ -1,10 +1,12 @@
 <div>
   <div class="BackgroundColorPicker">
-    <h3 class="header">Background Color</h3>
-    <label class='header' id="hex_label">Hex</label>
-    <input class='color-input' type="text"  />
+    <h3 class="BackgroundColorPicker__title">Background Color</h3>
+    <div class = "BackgroundColorPicker__header">
+      <label class="BackgroundColorPicker__label">Hex</label>
+      <input class="BackgroundColorPicker__input" type="text" value="#191919" />
+    </div>
     <div class="color_bar"> </div>
-    <div class="RGBBackground">
+    <div class="BackgroundColorPicker__RGB">
       <app-color-picker-column [letter]="'R'"></app-color-picker-column>
       <app-color-picker-column [letter]="'G'"></app-color-picker-column>
       <app-color-picker-column [letter]="'B'"></app-color-picker-column>
