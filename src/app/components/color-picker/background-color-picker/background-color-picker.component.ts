@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/mapTo';
+import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
@@ -17,14 +18,14 @@ export class BackgroundColorPickerComponent implements OnInit {
   colors;
   changeBackgroundColor$ = new Subject();
 
-
   constructor(store: Store<any>) {
     this.colors = store.select('colors');
-
+    console.log(this.changeBackgroundColor$);
     Observable.merge(
-      this.changeBackgroundColor$.mapTo(BackgroundColor('asd'))
+      this.changeBackgroundColor$.map((value) => (BackgroundColor(value)))
     )
     .subscribe((action)=>{
+      console.log('action: ' + JSON.stringify(action, null, 2))
       store.dispatch(action)
     })
 
