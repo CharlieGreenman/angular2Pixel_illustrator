@@ -12,6 +12,14 @@
   text-align: center;
 }
 
+.BackgroundColorPicker__bar {
+  width: 50%;
+  height: 3px;
+  margin-top: 10px;
+  margin-left: 25%;
+  background-color: white;
+}
+
 .BackgroundColorPicker__label {
   color: yellow;
   font-size: 20px;
