@@ -22,6 +22,7 @@ export class BackgroundColorPickerComponent implements OnInit {
 
   constructor(store: Store<any>, private colorConverterSvcService: ColorConverterSvcService) {
     this.colors = store.select('colors');
+    console.log('background color initialized: ' + JSON.stringify(colorConverterSvcService.hexToRgb('#123123')));
 
     Observable.merge(
       this.changeBackgroundColor$.map((value) => (BackgroundColor(value)))
@@ -34,7 +35,7 @@ export class BackgroundColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('background color initialized: ' + ColorConverterSvcService.hexToRgb('#123'));
+
   }
 
 }
