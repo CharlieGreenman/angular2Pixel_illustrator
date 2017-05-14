@@ -7,20 +7,22 @@ import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
+import { ColorConverterSvcService } from '../../../core/color-converter-svc.service';
 import { BackgroundColor } from '../../../actions/color-picker';
 
 @Component({
   selector: 'app-background-color-picker',
   templateUrl: './background-color-picker.component.html',
-  styleUrls: ['./background-color-picker.component.scss']
+  styleUrls: ['./background-color-picker.component.scss'],
+  providers: [ColorConverterSvcService]
 })
 export class BackgroundColorPickerComponent implements OnInit {
   colors;
   changeBackgroundColor$ = new Subject();
 
-  constructor(store: Store<any>) {
+  constructor(store: Store<any>, private colorConverterSvcService: ColorConverterSvcService) {
     this.colors = store.select('colors');
-    console.log(this.changeBackgroundColor$);
+
     Observable.merge(
       this.changeBackgroundColor$.map((value) => (BackgroundColor(value)))
     )
@@ -32,7 +34,7 @@ export class BackgroundColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log('background color initialized: ' + ColorConverterSvcService.hexToRgb('#123'));
   }
 
 }
