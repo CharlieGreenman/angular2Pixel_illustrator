@@ -6,7 +6,9 @@
       <input #inputNum class="BackgroundColorPicker__input" type="text" value="#191919"
       (keyup)="changeBackgroundColor$.next(inputNum.value)"/>
     </div>
-    <div class="BackgroundColorPicker__bar"> </div>
+    <div class="BackgroundColorPicker__bar"
+      [ngStyle]="{'background-color': (colors | async).backgroundHex }">
+    </div>
     <div class="BackgroundColorPicker__RGB">
       <app-color-picker-column [letter]="'R'"></app-color-picker-column>
       <app-color-picker-column [letter]="'G'"></app-color-picker-column>
