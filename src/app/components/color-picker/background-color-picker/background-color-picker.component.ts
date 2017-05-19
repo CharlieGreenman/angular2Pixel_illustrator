@@ -22,15 +22,14 @@ export class BackgroundColorPickerComponent implements OnInit {
 
   constructor(store: Store<any>, colorConverterSvcService: ColorConverterSvcService) {
     this.colors = store.select('colors');
-    console.log('background color initialized: ' + JSON.stringify(colorConverterSvcService.hexToRgb('#123123')));
 
     Observable.merge(
-      this.changeBackgroundColor$.map((value) => (BackgroundColor(value),
+      this.changeBackgroundColor$.map(function(value) {
+        BackgroundColor(value),
         BackgroundColorRGB(colorConverterSvcService.hexToRgb(value).r,
         colorConverterSvcService.hexToRgb(value).g,
         colorConverterSvcService.hexToRgb(value).b)
-      ))
-    )
+      }))
     .subscribe((action)=>{
       console.log('action: ' + JSON.stringify(action, null, 2))
       store.dispatch(action)
