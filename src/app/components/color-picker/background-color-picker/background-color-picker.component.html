@@ -8,11 +8,15 @@
     </div>
     <div class="BackgroundColorPicker__bar"
       [ngStyle]="{'background-color': (colors | async).backgroundHex }">
+      <input />
     </div>
     <div class="BackgroundColorPicker__RGB">
-      <app-color-picker-column [letter]="'R'" ></app-color-picker-column>
-      <app-color-picker-column [letter]="'G'"></app-color-picker-column>
-      <app-color-picker-column [letter]="'B'"></app-color-picker-column>
+      <app-color-picker-column value="{{(colors | async).backgroundRed}}"
+       [letter]="'R'" ></app-color-picker-column>
+      <app-color-picker-column value="{{(colors | async).backgroundGreen}}"
+      [letter]="'G'"></app-color-picker-column>
+      <app-color-picker-column value="{{(colors | async).backgroundBlue}}"
+       [letter]="'B'"></app-color-picker-column>
     </div>
   </div>
 </div>
