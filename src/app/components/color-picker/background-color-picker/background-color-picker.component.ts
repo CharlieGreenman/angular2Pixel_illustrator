@@ -8,7 +8,7 @@ import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
 import { ColorConverterSvcService } from '../../../core/color-converter-svc.service';
-import { BackgroundColor, BackgroundColorRGB } from '../../../actions/color-picker';
+import { BackgroundColor} from '../../../actions/color-picker';
 
 @Component({
   selector: 'app-background-color-picker',
@@ -24,14 +24,12 @@ export class BackgroundColorPickerComponent implements OnInit {
     this.colors = store.select('colors');
 
     Observable.merge(
-      this.changeBackgroundColor$.map(function(value) {
-        BackgroundColor(value),
-        BackgroundColorRGB(colorConverterSvcService.hexToRgb(value).r,
+      this.changeBackgroundColor$.map((value) => (
+        BackgroundColor(value, colorConverterSvcService.hexToRgb(value).r,
         colorConverterSvcService.hexToRgb(value).g,
         colorConverterSvcService.hexToRgb(value).b)
-      }))
+      )))
     .subscribe((action)=>{
-      console.log('action: ' + JSON.stringify(action, null, 2))
       store.dispatch(action)
     })
 

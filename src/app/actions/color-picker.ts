@@ -1,15 +1,9 @@
 import * as types from "../constants/ActionTypes";
 
-export function BackgroundColor(color){
+export function BackgroundColor(color, r, g, b){
     return{
         type: types.BACKGROUND_COLOR,
-        backgroundHex: color
-    }
-}
-
-export function BackgroundColorRGB(r,g,b){
-    return{
-        type: types.BACKGROUND_RGB_COLOR,
+        backgroundHex: color,
         backgroundRed: r,
         backgroundGreen: g,
         backgroundBlue: b
