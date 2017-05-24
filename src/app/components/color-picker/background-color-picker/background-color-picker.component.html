@@ -4,7 +4,9 @@
     <div class = "BackgroundColorPicker__header">
       <label class="BackgroundColorPicker__label">Hex</label>
       <input #inputNum class="BackgroundColorPicker__input" type="text" value="#191919"
-      (keyup)="changeBackgroundColor$.next(inputNum.value)"/>
+      (keyup)="changeBackgroundColor$.next(inputNum.value)"
+      maxlength="7"
+      />
     </div>
     <div class="BackgroundColorPicker__bar"
       [ngStyle]="{'background-color': (colors | async).backgroundHex }">
