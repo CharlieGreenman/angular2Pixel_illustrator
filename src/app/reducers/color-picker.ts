@@ -1,4 +1,5 @@
 import * as types from "../constants/ActionTypes";
+import { ColorConverterSvcService } from '../core/color-converter-svc.service';
 
 const initialColorState = {
     backgroundHex: "#191919",
@@ -11,14 +12,32 @@ const initialColorState = {
     blue: "25"
 };
 
+
+function hexToRgb(hex): any {
+
+  var arrBuff = new ArrayBuffer(4);
+  var vw = new DataView(arrBuff);
+  vw.setUint32(0,parseInt(hex, 16),false);
+  var arrByte = new Uint8Array(arrBuff);
+
+  return {
+    r: arrByte[1],
+    g: arrByte[2],
+    b: arrByte[3]
+  };
+}
+
 export const colors = (state = initialColorState, action) => {
   switch(action.type) {
     case types.BACKGROUND_COLOR:
       return Object.assign({}, state, {
           backgroundHex: action.backgroundHex || state.backgroundHex,
-          backgroundRed: action.backgroundRed || state.backgroundRed,
-          backgroundGreen: action.backgroundGreen || state.backgroundGreen,
-          backgroundBlue: action.backgroundBlue || state.backgroundBlue
+          backgroundRed: hexToRgb(action.backgroundHex).r
+          || state.backgroundRed,
+          backgroundGreen: hexToRgb(action.backgroundHex).g
+          || state.backgroundGreen,
+          backgroundBlue: hexToRgb(action.backgroundHex).b
+          || state.backgroundBlue
       });
     case types.PIXEL_COLOR:
       return Object.assign({}, state, {

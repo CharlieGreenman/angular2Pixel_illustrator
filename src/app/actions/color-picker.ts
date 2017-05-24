@@ -3,10 +3,7 @@ import * as types from "../constants/ActionTypes";
 export function BackgroundColor(color, r, g, b){
     return{
         type: types.BACKGROUND_COLOR,
-        backgroundHex: color,
-        backgroundRed: r,
-        backgroundGreen: g,
-        backgroundBlue: b
+        backgroundHex: color
     }
 }
 
