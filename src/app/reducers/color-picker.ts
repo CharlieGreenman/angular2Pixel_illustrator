@@ -1,5 +1,5 @@
 import * as types from "../constants/ActionTypes";
-import { ColorConverterSvcService } from '../core/color-converter-svc.service';
+import { hexToRgb } from '../core/utils/color-converter';
 
 const initialColorState = {
     backgroundHex: "#191919",
@@ -11,21 +11,6 @@ const initialColorState = {
     green: "25",
     blue: "25"
 };
-
-
-function hexToRgb(hex): any {
-
-  var arrBuff = new ArrayBuffer(4);
-  var vw = new DataView(arrBuff);
-  vw.setUint32(0,parseInt(hex, 16),false);
-  var arrByte = new Uint8Array(arrBuff);
-
-  return {
-    r: arrByte[1],
-    g: arrByte[2],
-    b: arrByte[3]
-  };
-}
 
 export const colors = (state = initialColorState, action) => {
   switch(action.type) {
