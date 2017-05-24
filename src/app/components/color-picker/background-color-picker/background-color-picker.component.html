@@ -11,12 +11,22 @@
       <input />
     </div>
     <div class="BackgroundColorPicker__RGB">
-      <app-color-picker-column value="{{(colors | async).backgroundRed}}"
-       [letter]="'R'" ></app-color-picker-column>
-      <app-color-picker-column value="{{(colors | async).backgroundGreen}}"
-      [letter]="'G'"></app-color-picker-column>
-      <app-color-picker-column value="{{(colors | async).backgroundBlue}}"
-       [letter]="'B'"></app-color-picker-column>
+
+      <app-color-picker-column #inputBackgroundRed
+        value="{{(colors | async).backgroundRed}}"
+        [letter]="'R'" >
+      </app-color-picker-column>
+
+      <app-color-picker-column #inputBackgroundGreen
+        value="{{(colors | async).backgroundGreen}}"
+        [letter]="'G'">
+      </app-color-picker-column>
+
+      <app-color-picker-column #inputBackgroundBlue
+        value="{{(colors | async).backgroundBlue}}"
+        [letter]="'B'">
+      </app-color-picker-column>
+
     </div>
   </div>
 </div>
