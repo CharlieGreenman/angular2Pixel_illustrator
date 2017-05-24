@@ -24,6 +24,12 @@ export const colors = (state = initialColorState, action) => {
           backgroundBlue: hexToRgb(action.backgroundHex).b
           || state.backgroundBlue
       });
+    case types.BACKGROUND_RGB_COLOR:
+      return Object.assign({}, state, {
+        backgroundRed: action.backgroundRed || state.backgroundRed,
+        backgroundGreen: action.backgroundGreen || state.backgroundGreen,
+        backgroundBlue: action.backgroundBlue || state.backgroundBlue
+      });
     case types.PIXEL_COLOR:
       return Object.assign({}, state, {
           pixelHex: action.pixelHex || state.pixelHex
