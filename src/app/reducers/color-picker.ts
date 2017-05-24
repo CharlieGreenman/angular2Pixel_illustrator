@@ -1,5 +1,5 @@
 import * as types from "../constants/ActionTypes";
-import { hexToRgb } from '../core/utils/color-converter';
+import { hexToRgb, rgbToHex } from '../core/utils/color-converter';
 
 const initialColorState = {
     backgroundHex: "#191919",
@@ -26,6 +26,8 @@ export const colors = (state = initialColorState, action) => {
       });
     case types.BACKGROUND_RGB_COLOR:
       return Object.assign({}, state, {
+        backgroundHex: rgbToHex(action.backgroundRed, action.backgroundGreen,
+        action.backgroundBlue)|| state.backgroundHex,
         backgroundRed: action.backgroundRed || state.backgroundRed,
         backgroundGreen: action.backgroundGreen || state.backgroundGreen,
         backgroundBlue: action.backgroundBlue || state.backgroundBlue
