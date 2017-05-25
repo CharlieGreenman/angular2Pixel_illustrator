@@ -28,7 +28,9 @@ export class BackgroundColorPickerComponent implements OnInit {
         BackgroundColor(value, colorConverterSvcService.hexToRgb(value).r,
         colorConverterSvcService.hexToRgb(value).g,
         colorConverterSvcService.hexToRgb(value).b)
-      )))
+      ))
+      
+    )
     .subscribe((action)=>{
       store.dispatch(action)
     })

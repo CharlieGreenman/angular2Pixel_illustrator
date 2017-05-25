@@ -16,16 +16,19 @@
 
       <app-color-picker-column #inputBackgroundRed
         value="{{(colors | async).backgroundRed}}"
+        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundRed.value)"
         [letter]="'R'" >
       </app-color-picker-column>
 
       <app-color-picker-column #inputBackgroundGreen
         value="{{(colors | async).backgroundGreen}}"
+        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundGreen.value)"
         [letter]="'G'">
       </app-color-picker-column>
 
       <app-color-picker-column #inputBackgroundBlue
         value="{{(colors | async).backgroundBlue}}"
+        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundBlue.value)"
         [letter]="'B'">
       </app-color-picker-column>
 
