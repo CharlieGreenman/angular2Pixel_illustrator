@@ -15,22 +15,28 @@
 
       <div class="column column--R" >
         <label class="label">R</label>
-        <input class="input" #backgroundRed
-          (keyup)="changeBackgroundColorRGB$.next(backgroundRed.value)"
+        <input class="input" #backgroundRGBRed
+          (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+          backgroundGreen: backgroundRGBGreen.value,
+          backgroundBlue: backgroundBlue.value})"
           value="{{(colors | async).backgroundRed}}" type="text" />
       </div>
 
       <div class="column column--G" >
         <label class="label">G</label>
-        <input class="input" #backgroundGreen
-          (keyup)="changeBackgroundColorRGB$.next(backgroundGreen.value)"
-          value="{{(colors | async).backgroundGreen}}" type="text" />
+        <input class="input" #backgroundRGBGreen
+        (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        backgroundGreen: backgroundRGBGreen.value,
+        backgroundBlue: backgroundBlue.value})"
+        value="{{(colors | async).backgroundGreen}}" type="text" />
       </div>
 
       <div class="column column--B" >
         <label class="label">B</label>
         <input class="input" #backgroundBlue
-          (keyup)="changeBackgroundColorRGB$.next(backgroundBlue.value)"
+        (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        backgroundGreen: backgroundRGBGreen.value,
+        backgroundBlue: backgroundBlue.value})"
           value="{{(colors | async).backgroundBlue}}" type="text" />
       </div>
 

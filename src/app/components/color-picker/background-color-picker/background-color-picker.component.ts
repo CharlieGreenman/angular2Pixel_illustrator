@@ -39,8 +39,9 @@ export class BackgroundColorPickerComponent implements OnInit {
         colorConverterSvcService.hexToRgb(value).g,
         colorConverterSvcService.hexToRgb(value).b)
       )),
-      this.changeBackgroundColorRGB$.map((value) => (
-        BackgroundColorRGB(value, value, value)
+      this.changeBackgroundColorRGB$.map((value: any) => (
+        BackgroundColorRGB(value.backgroundRed, value.backgroundGreen,
+          value.backgroundBlue)
       ))
 
     )
