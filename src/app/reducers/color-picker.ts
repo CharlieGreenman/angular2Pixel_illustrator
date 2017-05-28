@@ -26,6 +26,8 @@ export const colors = (state = initialColorState, action) => {
       });
     case types.BACKGROUND_RGB_COLOR:
       return Object.assign({}, state, {
+        backgroundHex: rgbToHex(action.backgroundRed, action.backgroundGreen,
+        action.backgroundBlue) || state.backgroundHex,
         backgroundRed: action.backgroundRed || state.backgroundRed,
         backgroundGreen: action.backgroundGreen || state.backgroundGreen,
         backgroundBlue: action.backgroundBlue || state.backgroundBlue

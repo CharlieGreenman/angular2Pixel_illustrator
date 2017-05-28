@@ -3,8 +3,9 @@
     <h3 class="BackgroundColorPicker__title">Background Color</h3>
     <div class = "BackgroundColorPicker__header">
       <label class="BackgroundColorPicker__label">Hex</label>
-      <input #inputNum class="BackgroundColorPicker__input" type="text" value="#191919"
-      (keyup)="changeBackgroundColor$.next(inputNum.value)"
+      <input #inputNum class="BackgroundColorPicker__input" type="text"
+      value="{{(colors | async).backgroundHex}}"
+      (input)="changeBackgroundColor$.next(inputNum.value)"
       maxlength="7"
       />
     </div>
@@ -16,28 +17,29 @@
       <div class="column column--R" >
         <label class="label">R</label>
         <input class="input" #backgroundRGBRed
-          (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+          (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
           backgroundGreen: backgroundRGBGreen.value,
           backgroundBlue: backgroundBlue.value})"
-          value="{{(colors | async).backgroundRed}}" type="text" />
+          value="{{(colors | async).backgroundRed}}" type="text" maxlength="3" />
       </div>
 
       <div class="column column--G" >
         <label class="label">G</label>
         <input class="input" #backgroundRGBGreen
-        (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
         backgroundGreen: backgroundRGBGreen.value,
         backgroundBlue: backgroundBlue.value})"
-        value="{{(colors | async).backgroundGreen}}" type="text" />
+        value="{{(colors | async).backgroundGreen}}" type="text" maxlength="3"/>
       </div>
 
       <div class="column column--B" >
         <label class="label">B</label>
         <input class="input" #backgroundBlue
-        (keyup)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
         backgroundGreen: backgroundRGBGreen.value,
         backgroundBlue: backgroundBlue.value})"
-          value="{{(colors | async).backgroundBlue}}" type="text" />
+          value="{{(colors | async).backgroundBlue}}" type="text" maxlength="3"
+        />
       </div>
 
     </div>
