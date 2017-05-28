@@ -7,12 +7,12 @@ export function BackgroundColor(color, r, g, b){
     }
 }
 
-export function BackgroundColorRGB(r,g,b) {
+export function BackgroundColorRGB(red, green, blue) {
   return{
     type: types.BACKGROUND_RGB_COLOR,
-    backgroundRed: r,
-    backgroundGreen: g,
-    backgroundBlue: b
+    backgroundRed: red,
+    backgroundGreen: green,
+    backgroundBlue: blue
   }
 }
 

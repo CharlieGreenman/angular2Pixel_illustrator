@@ -13,23 +13,26 @@
     </div>
     <div class="BackgroundColorPicker__RGB">
 
-      <app-color-picker-column #inputBackgroundRed
-        value="{{(colors | async).backgroundRed}}"
-        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundRed.value)"
-        [letter]="'R'" >
-      </app-color-picker-column>
+      <div class="column column--R" >
+        <label class="label">R</label>
+        <input class="input" #backgroundRed
+          (keyup)="changeBackgroundColorRGB$.next(backgroundRed.value)"
+          value="{{(colors | async).backgroundRed}}" type="text" />
+      </div>
 
-      <app-color-picker-column #inputBackgroundGreen
-        value="{{(colors | async).backgroundGreen}}"
-        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundGreen.value)"
-        [letter]="'G'">
-      </app-color-picker-column>
+      <div class="column column--G" >
+        <label class="label">G</label>
+        <input class="input" #backgroundGreen
+          (keyup)="changeBackgroundColorRGB$.next(backgroundGreen.value)"
+          value="{{(colors | async).backgroundGreen}}" type="text" />
+      </div>
 
-      <app-color-picker-column #inputBackgroundBlue
-        value="{{(colors | async).backgroundBlue}}"
-        (keyup)="changeBackgroundColorRGB$.next(inputBackgroundBlue.value)"
-        [letter]="'B'">
-      </app-color-picker-column>
+      <div class="column column--B" >
+        <label class="label">B</label>
+        <input class="input" #backgroundBlue
+          (keyup)="changeBackgroundColorRGB$.next(backgroundBlue.value)"
+          value="{{(colors | async).backgroundBlue}}" type="text" />
+      </div>
 
     </div>
   </div>

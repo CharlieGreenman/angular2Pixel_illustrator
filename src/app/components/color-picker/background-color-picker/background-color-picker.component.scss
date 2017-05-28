@@ -36,3 +36,27 @@
   display: flex;
   margin-top: 10px;
 }
+
+.input{
+  width: 100%;
+  font-size: 15px;
+  background: none;
+  border: none;
+  text-align: center;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100px;
+  &--R, &--R input{
+    color: red;
+  }
+  &--G, &--G input{
+    color: green;
+  }
+  &--B, &--B input{
+    color: blue;
+  }
+
+}

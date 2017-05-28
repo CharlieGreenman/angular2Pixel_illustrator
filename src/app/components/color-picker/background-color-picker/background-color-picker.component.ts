@@ -8,7 +8,7 @@ import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
 import { ColorConverterSvcService } from '../../../core/color-converter-svc.service';
-import { BackgroundColor} from '../../../actions/color-picker';
+import { BackgroundColor, BackgroundColorRGB} from '../../../actions/color-picker';
 
 @Component({
   selector: 'app-background-color-picker',
@@ -40,9 +40,7 @@ export class BackgroundColorPickerComponent implements OnInit {
         colorConverterSvcService.hexToRgb(value).b)
       )),
       this.changeBackgroundColorRGB$.map((value) => (
-        BackgroundColor(value, colorConverterSvcService.hexToRgb(value).r,
-        colorConverterSvcService.hexToRgb(value).g,
-        colorConverterSvcService.hexToRgb(value).b)
+        BackgroundColorRGB(value, value, value)
       ))
 
     )
