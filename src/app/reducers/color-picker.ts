@@ -41,6 +41,8 @@ export const colors = (state = initialColorState, action) => {
       });
     case types.PIXEL_RGB_COLOR:
       return Object.assign({}, state, {
+          pixelHex: rgbToHex(action.pixelRed, action.pixelGreen,
+          action.pixelBlue) || state.pixelHex,
           pixelRed: action.pixelRed || state.pixelRed,
           pixelGreen: action.pixelGreen || state.pixelGreen,
           pixelBlue: action.pixelBlue || state.pixelBlue,

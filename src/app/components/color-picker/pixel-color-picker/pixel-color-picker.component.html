@@ -5,7 +5,7 @@
       <label class="BackgroundColorPicker__label">Hex</label>
       <input #pixelInput class="BackgroundColorPicker__input" type="text"
       value="{{(colors | async).pixelHex}}"
-      (input)="changePixelColor$.next(pixelInput.value)"
+      (keyup)="changePixelColor$.next(pixelInput.value)"
       maxlength="7"
       />
     </div>
@@ -16,7 +16,7 @@
       <div class="column column--R" >
         <label class="label">R</label>
         <input class="input" #pixelRGBRed
-          (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+          (keyup)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
           pixelGreen: pixelRGBGreen.value,
           pixelBlue: pixelRGBBlue.value})"
           value="{{(colors | async).pixelRed}}" type="text" maxlength="3" />
@@ -25,7 +25,7 @@
       <div class="column column--G" >
         <label class="label">G</label>
         <input class="input" #pixelRGBGreen
-        (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+        (keyup)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
         pixelGreen: pixelRGBGreen.value,
         pixelBlue: pixelRGBBlue.value})"
         value="{{(colors | async).pixelGreen}}" type="text" maxlength="3"/>
@@ -34,7 +34,7 @@
       <div class="column column--B" >
         <label class="label">B</label>
         <input class="input" #pixelRGBBlue
-        (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+        (keyup)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
         pixelGreen: pixelRGBGreen.value,
         pixelBlue: pixelRGBBlue.value})"
           value="{{(colors | async).pixelBlue}}" type="text" maxlength="3"
