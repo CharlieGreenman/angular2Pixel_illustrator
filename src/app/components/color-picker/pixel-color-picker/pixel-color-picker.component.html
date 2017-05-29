@@ -15,29 +15,29 @@
     <div class="BackgroundColorPicker__RGB">
       <div class="column column--R" >
         <label class="label">R</label>
-        <input class="input" #backgroundRGBRed
-          (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
-          backgroundGreen: backgroundRGBGreen.value,
-          backgroundBlue: backgroundBlue.value})"
-          value="{{(colors | async).backgroundRed}}" type="text" maxlength="3" />
+        <input class="input" #pixelRGBRed
+          (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+          pixelGreen: pixelRGBGreen.value,
+          pixelBlue: pixelRGBBlue.value})"
+          value="{{(colors | async).pixelRed}}" type="text" maxlength="3" />
       </div>
 
       <div class="column column--G" >
         <label class="label">G</label>
-        <input class="input" #backgroundRGBGreen
-        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
-        backgroundGreen: backgroundRGBGreen.value,
-        backgroundBlue: backgroundBlue.value})"
-        value="{{(colors | async).backgroundGreen}}" type="text" maxlength="3"/>
+        <input class="input" #pixelRGBGreen
+        (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+        pixelGreen: pixelRGBGreen.value,
+        pixelBlue: pixelRGBBlue.value})"
+        value="{{(colors | async).pixelGreen}}" type="text" maxlength="3"/>
       </div>
 
       <div class="column column--B" >
         <label class="label">B</label>
-        <input class="input" #backgroundBlue
-        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
-        backgroundGreen: backgroundRGBGreen.value,
-        backgroundBlue: backgroundBlue.value})"
-          value="{{(colors | async).backgroundBlue}}" type="text" maxlength="3"
+        <input class="input" #pixelRGBBlue
+        (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
+        pixelGreen: pixelRGBGreen.value,
+        pixelBlue: pixelRGBBlue.value})"
+          value="{{(colors | async).pixelBlue}}" type="text" maxlength="3"
         />
       </div>
 

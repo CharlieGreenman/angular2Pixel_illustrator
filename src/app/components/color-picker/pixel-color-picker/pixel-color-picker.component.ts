@@ -8,6 +8,7 @@ import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
 import { ColorConverterSvcService } from '../../../core/color-converter-svc.service';
+import { PixelColor, PixelColorRGB} from '../../../actions/color-picker';
 
 @Component({
   selector: 'app-pixel-color-picker',
@@ -19,7 +20,27 @@ export class PixelColorPickerComponent implements OnInit {
   changePixelColor$ = new Subject();
   changePixelColorRGB$ = new Subject();
 
-  constructor() { }
+  constructor(store: Store<any>, colorConverterSvcService: ColorConverterSvcService) {
+    this.colors = store.select('colors');
+
+    Observable.merge(
+      // Create observable map for  when background hex changes, and use that
+      // value to update store for backgroundColor
+      this.changePixelColor$.map((value: any) => (
+        PixelColor(value, colorConverterSvcService.hexToRgb(value).r,
+        colorConverterSvcService.hexToRgb(value).g,
+        colorConverterSvcService.hexToRgb(value).b)
+      )),
+      this.changePixelColorRGB$.map((value: any) => (
+        PixelColorRGB(value.pixelRed, value.pixelGreen,
+          value.pixelBlue)
+      ))
+
+    )
+    .subscribe((action)=>{
+      store.dispatch(action)
+    })
+  }
 
   ngOnInit() {
   }
