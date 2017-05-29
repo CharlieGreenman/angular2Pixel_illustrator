@@ -26,8 +26,8 @@ export function PixelColor(color){
 export function PixelColorRGB(r,g,b){
     return{
         type: types.PIXEL_RGB_COLOR,
-        red: r,
-        green: g,
-        blue: b
+        pixelRed: r,
+        pixelGreen: g,
+        pixelBlue: b
     }
 }

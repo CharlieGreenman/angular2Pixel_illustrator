@@ -7,9 +7,9 @@ const initialColorState = {
     backgroundGreen: "25",
     backgroundBlue: "25",
     pixelHex: "#000000",
-    red: "25",
-    green: "25",
-    blue: "25"
+    pixelRed: "25",
+    pixelBlue: "25",
+    pixelGreen: "25"
 };
 
 export const colors = (state = initialColorState, action) => {
@@ -35,15 +35,15 @@ export const colors = (state = initialColorState, action) => {
     case types.PIXEL_COLOR:
       return Object.assign({}, state, {
           pixelHex: action.pixelHex || state.pixelHex,
-          pixelRed: hexToRgb(action.red).r || state.red,
-          pixelGreen: hexToRgb(action.green).r || state.green,
-          pixelBlue: hexToRgb(action.blue).r || state.blue
+          pixelRed: hexToRgb(action.pixelHex).r || state.pixelRed,
+          pixelGreen: hexToRgb(action.pixelHex).g || state.pixelGreen,
+          pixelBlue: hexToRgb(action.pixelHex).b || state.pixelBlue
       });
     case types.PIXEL_RGB_COLOR:
       return Object.assign({}, state, {
-          pixelRed: action.red || state.red,
-          pixelGreen: action.green || state.green,
-          pixelBlue: action.blue || state.blue,
+          pixelRed: action.pixelRed || state.pixelRed,
+          pixelGreen: action.pixelGreen || state.pixelGreen,
+          pixelBlue: action.pixelBlue || state.pixelBlue,
       });
     default:
       return state;
