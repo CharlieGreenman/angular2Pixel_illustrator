@@ -19,7 +19,7 @@
           (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
           pixelGreen: pixelRGBGreen.value,
           pixelBlue: pixelRGBBlue.value})"
-          value="{{(colors | async).pixelRed}}" type="text" maxlength="3" />
+          value="{{(colors | async).red}}" type="text" maxlength="3" />
       </div>
 
       <div class="column column--G" >
@@ -28,7 +28,7 @@
         (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
         pixelGreen: pixelRGBGreen.value,
         pixelBlue: pixelRGBBlue.value})"
-        value="{{(colors | async).pixelGreen}}" type="text" maxlength="3"/>
+        value="{{(colors | async).green}}" type="text" maxlength="3"/>
       </div>
 
       <div class="column column--B" >
@@ -37,7 +37,7 @@
         (input)="changePixelColorRGB$.next({pixelRed: pixelRGBRed.value,
         pixelGreen: pixelRGBGreen.value,
         pixelBlue: pixelRGBBlue.value})"
-          value="{{(colors | async).pixelBlue}}" type="text" maxlength="3"
+          value="{{(colors | async).blue}}" type="text" maxlength="3"
         />
       </div>
 
