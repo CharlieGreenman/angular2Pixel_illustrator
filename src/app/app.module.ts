@@ -13,11 +13,13 @@ import { environment } from './reducers/show-hide';
 import { colors } from './reducers/color-picker';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { PixelGridComponent } from './components/pixel-grid/pixel-grid/pixel-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowHideBarComponent
+    ShowHideBarComponent,
+    PixelGridComponent
   ],
   imports: [
     BrowserModule,
