@@ -1,0 +1,62 @@
+.BackgroundColorPicker{
+  color: white;
+}
+
+.BackgroundColorPicker__title {
+  text-align: center;
+}
+
+.BackgroundColorPicker__header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.BackgroundColorPicker__bar {
+  width: 50%;
+  height: 3px;
+  margin-top: 10px;
+  margin-left: 25%;
+}
+
+.BackgroundColorPicker__label {
+  color: yellow;
+  font-size: 20px;
+}
+
+.BackgroundColorPicker__input {
+  background: none;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+.BackgroundColorPicker__RGB {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input{
+  width: 100%;
+  font-size: 15px;
+  background: none;
+  border: none;
+  text-align: center;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100px;
+  &--R, &--R input{
+    color: red;
+  }
+  &--G, &--G input{
+    color: green;
+  }
+  &--B, &--B input{
+    color: blue;
+  }
+
+}

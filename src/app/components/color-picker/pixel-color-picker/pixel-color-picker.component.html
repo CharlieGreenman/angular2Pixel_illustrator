@@ -1,3 +1,46 @@
-<p>
-  pixel-color-picker works!
-</p>
+<div>
+  <div class="BackgroundColorPicker">
+    <h3 class="BackgroundColorPicker__title">Pixel Color</h3>
+    <div class = "BackgroundColorPicker__header">
+      <label class="BackgroundColorPicker__label">Hex</label>
+      <input #pixelInput class="BackgroundColorPicker__input" type="text"
+      value="{{(colors | async).pixelHex}}"
+      (input)="changePixelColor$.next(pixelInput.value)"
+      maxlength="7"
+      />
+    </div>
+    <div class="BackgroundColorPicker__bar"
+      [ngStyle]="{'background-color': (colors | async).backgroundHex }">
+    </div>
+    <div class="BackgroundColorPicker__RGB">
+      <div class="column column--R" >
+        <label class="label">R</label>
+        <input class="input" #backgroundRGBRed
+          (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+          backgroundGreen: backgroundRGBGreen.value,
+          backgroundBlue: backgroundBlue.value})"
+          value="{{(colors | async).backgroundRed}}" type="text" maxlength="3" />
+      </div>
+
+      <div class="column column--G" >
+        <label class="label">G</label>
+        <input class="input" #backgroundRGBGreen
+        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        backgroundGreen: backgroundRGBGreen.value,
+        backgroundBlue: backgroundBlue.value})"
+        value="{{(colors | async).backgroundGreen}}" type="text" maxlength="3"/>
+      </div>
+
+      <div class="column column--B" >
+        <label class="label">B</label>
+        <input class="input" #backgroundBlue
+        (input)="changeBackgroundColorRGB$.next({backgroundRed: backgroundRGBRed.value,
+        backgroundGreen: backgroundRGBGreen.value,
+        backgroundBlue: backgroundBlue.value})"
+          value="{{(colors | async).backgroundBlue}}" type="text" maxlength="3"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
