@@ -9,6 +9,15 @@ export function InitGrid(init) {
   };
 }
 
+export function gridSettings(columnCount, rowCount, pixelSize) {
+  return {
+    type: types.GRID_SETTINGS,
+    columnCount: columnCount,
+    rowCount: rowCount,
+    pixelSize: pixelSize
+  }
+}
+
 //three input fields for form
 //columncount
 export function ColumnCount(column) {

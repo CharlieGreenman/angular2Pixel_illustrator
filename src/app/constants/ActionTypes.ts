@@ -3,6 +3,7 @@ export const SHOW = 'show';
 
 export const INIT_APP = "INIT_APP";
 
+export const GRID_SETTINGS = "GRID_SETTINGS";
 export const COLUMN_COUNT = "COLUMN_COUNT";
 export const ROW_COUNT = "ROW_COUNT";
 export const PIXEL_SIZE = "PIXEL_SIZE";
