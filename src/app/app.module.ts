@@ -14,11 +14,13 @@ import { environment } from './reducers/show-hide';
 import { colors } from './reducers/color-picker';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ChooseSizeComponent } from './components/choose-size/choose-size.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowHideBarComponent,
+    ChooseSizeComponent,
   ],
   imports: [
     BrowserModule,
