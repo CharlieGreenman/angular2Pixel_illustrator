@@ -15,6 +15,7 @@ export class PixelGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('current row size: ' + this.row);
   }
 
 }
