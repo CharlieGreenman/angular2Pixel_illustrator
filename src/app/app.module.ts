@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ColorPickerModule } from './components/color-picker/color-picker.module';
 import { PixelGridModule } from './components/pixel-grid/pixel-grid.module';
+import { ChooseSizeModule } from './components/choose-size/choose-size.module';
 
 import { AppComponent } from './app.component';
 import { ShowHideBarComponent } from './show-hide-bar/show-hide-bar.component';
@@ -14,13 +15,11 @@ import { environment } from './reducers/show-hide';
 import { colors } from './reducers/color-picker';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { ChooseSizeComponent } from './components/choose-size/choose-size.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowHideBarComponent,
-    ChooseSizeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +27,7 @@ import { ChooseSizeComponent } from './components/choose-size/choose-size.compon
     HttpModule,
     ColorPickerModule,
     PixelGridModule,
+    ChooseSizeModule,
     StoreModule.provideStore({environment, colors}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
