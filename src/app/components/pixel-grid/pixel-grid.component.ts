@@ -1,28 +1,29 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-pixel-grid',
   templateUrl: './pixel-grid.component.html',
   styleUrls: ['./pixel-grid.component.scss']
 })
-export class PixelGridComponent {
-  @ViewChild('canvas') canvasRef:ElementRef;
-  private canvas: any;
+export class PixelGridComponent implements AfterViewInit {
   @Input() row: number;
   @Input() column: number;
   @Input() pixelSize: number;
+  context:CanvasRenderingContext2D;
+
+  @ViewChild('canvas') canvas:ElementRef;
 
   constructor() { }
 
-  ngOnInit() {
-
-  }
-
   ngAfterViewInit() {
-    console.log('current row size: ' + this.canvas);
-    const c = this.canvas.getContext('2d');
-    c.fillStyle = "#fefefe";
     console.log('ngAfterViewInit called');
+
+    let c = this.canvas.nativeElement;
+    this.context = c.getContext('2d');
+
+    var ctx = this.context;
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, 300, 150);
   }
 
   // if(this.canvas.getContext) {
