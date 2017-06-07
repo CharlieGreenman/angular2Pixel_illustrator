@@ -1,12 +1,12 @@
 import * as types from "../constants/ActionTypes";
 
-const settings = {
+const initialGridSettings = {
     column:  20,
     row:     20,
     pixel:    20
 };
 
-export default function environmentSettings(state = settings, action) {
+export const GridSettings = (state = initialGridSettings, action) => {
   switch(action.type) {
   case types.COLUMN_COUNT:
       return Object.assign({}, state, {
