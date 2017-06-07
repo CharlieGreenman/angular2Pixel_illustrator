@@ -17,18 +17,30 @@ export class PixelGridComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit called');
-
     let c = this.canvas.nativeElement;
+    c.row = this.row;
+    c.column = this.column;
     this.context = c.getContext('2d');
+    this.pixelSize = 30;
+    this.row = 10;
+    this.column = 10;
 
-    var ctx = this.context;
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, 300, 150);
+    this.drawGrid();
   }
 
-  // if(this.canvas.getContext) {
-  //   console.log('canvas has context and such');
-  // }
+  drawGrid() {
+    var ctx = this.context;
+    ctx.fillStyle = "#123";
+    ctx.fillRect(0, 0, 300, 150);
 
+    for(var r = 0; r < this.column; r++) {
+        for(var i = 0; i < this.row; i++) {
+            ctx.strokeStyle = "#fff";
+            ctx.strokeRect(r * this.pixelSize, i * this.pixelSize, this.pixelSize, this.pixelSize);
+            ctx.fillStyle = '#262626';
+            ctx.fillRect(r * this.pixelSize + 1, i * this.pixelSize + 1, this.pixelSize - 2, this.pixelSize - 2);
+        }
+    }
+  }
 
 }
