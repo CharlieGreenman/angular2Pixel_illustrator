@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseSizeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
+  }
+
+  initGrid(e) {
+    console.log('init grid clicked on.')
   }
 
 }

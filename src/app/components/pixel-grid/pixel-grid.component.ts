@@ -41,7 +41,6 @@ export class PixelGridComponent implements AfterViewInit {
       this.backgroundColor = colors.backgroundHex;
       this.drawGrid();
     });
-
   }
 
   drawGrid() {
