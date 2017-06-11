@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -18,9 +19,14 @@ export class PixelGridComponent implements AfterViewInit {
   constructor(store: Store<any>) {
     this.gridSettings = store.select('gridSettings');
 
+    this.gridSettings.subscribe((gridSettings)=>{
+        console.log('action: ' + JSON.stringify(gridSettings));
+    });
+
   }
 
   ngAfterViewInit() {
+
     let c = this.canvas.nativeElement;
     this.context = c.getContext('2d');
     this.pixelSize = 30;
