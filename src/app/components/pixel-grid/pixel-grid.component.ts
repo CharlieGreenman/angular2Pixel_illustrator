@@ -32,7 +32,8 @@ export class PixelGridComponent implements AfterViewInit {
       this.pixelSize = gridSettings.pixelSize;
       this.row = gridSettings.row;
       this.column = gridSettings.column;
-        console.log('action: ' + JSON.stringify(gridSettings));
+      c.width = gridSettings.pixelSize * gridSettings.row;
+      c.height = gridSettings.pixelSize * gridSettings.column;
     });
 
     this.colors.subscribe((colors)=>{
@@ -45,8 +46,6 @@ export class PixelGridComponent implements AfterViewInit {
 
   drawGrid() {
     var ctx = this.context;
-    ctx.fillRect(0, 0, 300, 150);
-
     for(var r = 0; r < this.column; r++) {
         for(var i = 0; i < this.row; i++) {
             ctx.strokeStyle = this.backgroundColor;
