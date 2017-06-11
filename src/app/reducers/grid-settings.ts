@@ -1,9 +1,9 @@
 import * as types from "../constants/ActionTypes";
 
 const initialGridSettings = {
-    column:  20,
-    row:     20,
-    pixel:    20
+    column: 20,
+    row: 20,
+    pixelSize: 20
 };
 
 export const gridSettings = (state = initialGridSettings, action) => {
@@ -18,7 +18,7 @@ export const gridSettings = (state = initialGridSettings, action) => {
       });
   case types.PIXEL_SIZE:
       return Object.assign({}, state, {
-          pixel: action
+          pixelSize: action
       });
   default:
       return state;

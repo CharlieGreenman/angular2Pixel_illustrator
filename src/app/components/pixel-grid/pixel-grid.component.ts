@@ -18,21 +18,18 @@ export class PixelGridComponent implements AfterViewInit {
 
   constructor(store: Store<any>) {
     this.gridSettings = store.select('gridSettings');
-
-    this.gridSettings.subscribe((gridSettings)=>{
-        console.log('action: ' + JSON.stringify(gridSettings));
-    });
-
   }
 
   ngAfterViewInit() {
-
     let c = this.canvas.nativeElement;
     this.context = c.getContext('2d');
-    this.pixelSize = 30;
-    this.row = 10;
-    this.column = 10;
 
+    this.gridSettings.subscribe((gridSettings)=>{
+      this.pixelSize = gridSettings.pixelSize;
+      this.row = gridSettings.row;
+      this.column = gridSettings.column;
+        console.log('action: ' + JSON.stringify(gridSettings));
+    });
     this.drawGrid();
   }
 
