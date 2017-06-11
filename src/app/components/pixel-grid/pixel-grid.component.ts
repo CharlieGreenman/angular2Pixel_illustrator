@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-pixel-grid',
@@ -6,6 +7,7 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular
   styleUrls: ['./pixel-grid.component.scss']
 })
 export class PixelGridComponent implements AfterViewInit {
+  gridSettings;
   @Input() row: number;
   @Input() column: number;
   @Input() pixelSize: number;
@@ -13,13 +15,13 @@ export class PixelGridComponent implements AfterViewInit {
 
   @ViewChild('canvas') canvas:ElementRef;
 
-  constructor() { }
+  constructor(store: Store<any>) {
+    this.gridSettings = store.select('gridSettings');
+
+  }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit called');
     let c = this.canvas.nativeElement;
-    c.row = this.row;
-    c.column = this.column;
     this.context = c.getContext('2d');
     this.pixelSize = 30;
     this.row = 10;

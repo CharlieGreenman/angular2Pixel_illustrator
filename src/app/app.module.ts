@@ -13,7 +13,7 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
 import { StoreModule } from '@ngrx/store';
 import { environment } from './reducers/show-hide';
 import { colors } from './reducers/color-picker';
-import { GridSettings } from './reducers/grid-settings';
+import { gridSettings } from './reducers/grid-settings';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -29,7 +29,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ColorPickerModule,
     PixelGridModule,
     ChooseSizeModule,
-    StoreModule.provideStore({environment, colors, GridSettings}),
+    StoreModule.provideStore({environment, colors, gridSettings}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
     })

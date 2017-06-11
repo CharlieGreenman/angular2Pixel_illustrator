@@ -6,7 +6,7 @@ const initialGridSettings = {
     pixel:    20
 };
 
-export const GridSettings = (state = initialGridSettings, action) => {
+export const gridSettings = (state = initialGridSettings, action) => {
   switch(action.type) {
   case types.COLUMN_COUNT:
       return Object.assign({}, state, {
