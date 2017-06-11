@@ -30,14 +30,9 @@ export class ChooseSizeComponent implements OnInit {
       store.dispatch(action)
     })
 
-
   }
 
   ngOnInit() {
-  }
-
-  initGrid(e) {
-    console.log('init grid clicked on.')
   }
 
 }
