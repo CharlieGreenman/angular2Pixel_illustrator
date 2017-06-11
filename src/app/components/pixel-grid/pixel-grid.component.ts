@@ -46,12 +46,12 @@ export class PixelGridComponent implements AfterViewInit {
 
   drawGrid() {
     var ctx = this.context;
-    for(var r = 0; r < this.column; r++) {
-        for(var i = 0; i < this.row; i++) {
+    for(var x = 0; x < this.column; x++) {
+        for(var y = 0; y < this.row; y++) {
             ctx.strokeStyle = this.backgroundColor;
-            ctx.strokeRect(r * this.pixelSize, i * this.pixelSize, this.pixelSize, this.pixelSize);
+            ctx.strokeRect(x * this.pixelSize, y * this.pixelSize, this.pixelSize, this.pixelSize);
             ctx.fillStyle = this.pixelColor;
-            ctx.fillRect(r * this.pixelSize + 1, i * this.pixelSize + 1, this.pixelSize - 2, this.pixelSize - 2);
+            ctx.fillRect(x * this.pixelSize + 1, y * this.pixelSize + 1, this.pixelSize - 2, this.pixelSize - 2);
         }
     }
   }

@@ -7,18 +7,21 @@
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_column">
           <label> Column </label>
-          <input type="number" #columnCount/>
+          <input type="number" value="{{(gridSettings | async).column }}"
+           #columnCount/>
       </div>
       <div class = "ChooseSize_column">
         <label> Row </label>
-        <input type="number" #rowCount/>
+        <input type="number" value="{{(gridSettings | async).row }}"
+        #rowCount/>
       </div>
     </div>
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_row">
         <div class = "ChooseSize_column">
           <label> Pixel Size </label>
-          <input type="number" #pixelSize/>
+          <input type="number" value="{{(gridSettings | async).pixelSize }}"
+          #pixelSize/>
         </div>
         <div class = "ChooseSize_column">
           <button type="button" (click)="changeGridSettings$.next(
