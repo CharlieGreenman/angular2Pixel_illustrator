@@ -8,17 +8,11 @@ const initialGridSettings = {
 
 export const gridSettings = (state = initialGridSettings, action) => {
   switch(action.type) {
-  case types.COLUMN_COUNT:
+  case types.GRID_SETTINGS:
       return Object.assign({}, state, {
-          column: action
-      });
-  case types.ROW_COUNT:
-      return Object.assign({}, state, {
-          row: action
-      });
-  case types.PIXEL_SIZE:
-      return Object.assign({}, state, {
-          pixelSize: action
+          column: action.columnCount,
+          row: action.rowCount,
+          pixelSize: action.pixelSize
       });
   default:
       return state;

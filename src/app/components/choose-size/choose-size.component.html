@@ -7,21 +7,27 @@
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_column">
           <label> Column </label>
-          <input class = "" #gridColumnCount/>
+          <input class = "" columnCount/>
       </div>
       <div class = "ChooseSize_column">
         <label> Row </label>
-        <input class = "" #gridRowCount/>
+        <input class = "" rowCount/>
       </div>
     </div>
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_row">
         <div class = "ChooseSize_column">
           <label> Pixel Size </label>
-          <input class = "" #gridPixelSize/>
+          <input class = "" pixelSize/>
         </div>
         <div class = "ChooseSize_column">
-          <button type="button" (click)="initGrid()" ></button>
+          <button type="button" (click)="changeGridSettings$.next(
+          {
+            columnCount: columnCount.value,
+            rowCount: rowCount.value,
+            pixelSize: pixelSize.value
+          }
+           )" ></button>
         </div>
       </div>
     </div>
