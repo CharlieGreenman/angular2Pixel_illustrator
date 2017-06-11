@@ -9,6 +9,9 @@ import { Store } from '@ngrx/store';
 })
 export class PixelGridComponent implements AfterViewInit {
   gridSettings;
+  colors;
+  pixelColor;
+  backgroundColor;
   @Input() row: number;
   @Input() column: number;
   @Input() pixelSize: number;
@@ -18,6 +21,7 @@ export class PixelGridComponent implements AfterViewInit {
 
   constructor(store: Store<any>) {
     this.gridSettings = store.select('gridSettings');
+    this.colors = store.select('colors');
   }
 
   ngAfterViewInit() {
@@ -30,19 +34,24 @@ export class PixelGridComponent implements AfterViewInit {
       this.column = gridSettings.column;
         console.log('action: ' + JSON.stringify(gridSettings));
     });
-    this.drawGrid();
+
+    this.colors.subscribe((colors)=>{
+      this.pixelColor = colors.pixelHex;
+      this.backgroundColor = colors.backgroundHex;
+      this.drawGrid();
+    });
+
   }
 
   drawGrid() {
     var ctx = this.context;
-    ctx.fillStyle = "#123";
     ctx.fillRect(0, 0, 300, 150);
 
     for(var r = 0; r < this.column; r++) {
         for(var i = 0; i < this.row; i++) {
-            ctx.strokeStyle = "#fff";
+            ctx.strokeStyle = this.backgroundColor;
             ctx.strokeRect(r * this.pixelSize, i * this.pixelSize, this.pixelSize, this.pixelSize);
-            ctx.fillStyle = '#262626';
+            ctx.fillStyle = this.pixelColor;
             ctx.fillRect(r * this.pixelSize + 1, i * this.pixelSize + 1, this.pixelSize - 2, this.pixelSize - 2);
         }
     }
