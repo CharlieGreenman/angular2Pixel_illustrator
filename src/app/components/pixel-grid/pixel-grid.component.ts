@@ -34,6 +34,7 @@ export class PixelGridComponent implements AfterViewInit {
       this.column = gridSettings.column;
       c.width = gridSettings.pixelSize * gridSettings.row;
       c.height = gridSettings.pixelSize * gridSettings.column;
+      this.drawGrid();
     });
 
     this.colors.subscribe((colors)=>{
