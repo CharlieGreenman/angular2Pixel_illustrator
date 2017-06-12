@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
-import { gridSettings } from '../../actions/environment';
+import { gridSettings } from '../../actions/grid-settings';
 
 @Component({
   selector: 'app-choose-size',
