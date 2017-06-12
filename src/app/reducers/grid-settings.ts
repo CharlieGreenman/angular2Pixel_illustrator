@@ -12,7 +12,8 @@ export const gridSettings = (state = initialGridSettings, action) => {
       return Object.assign({}, state, {
           column: Number(action.columnCount),
           row: Number(action.rowCount),
-          pixelSize: Number(action.pixelSize)
+          pixelSize: Number(action.pixelSize),
+          initGrid: true
       });
   default:
       return state;
