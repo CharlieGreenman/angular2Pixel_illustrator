@@ -3,7 +3,8 @@ import * as types from "../constants/ActionTypes";
 const initialGridSettings = {
     column: 20,
     row: 20,
-    pixelSize: 20
+    pixelSize: 20,
+    initGrid: false
 };
 
 export const gridSettings = (state = initialGridSettings, action) => {
