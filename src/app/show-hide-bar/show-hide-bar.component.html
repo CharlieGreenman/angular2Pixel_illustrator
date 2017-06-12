@@ -1,8 +1,0 @@
-<p>
-  <button (click)="show$.next()" class="button">Show</button>
-  <button (click)="hide$.next()" class="button">Hide</button>
-</p>
-
-<p> environment: {{(environment | async).show}} </p>
-
-<div *ngIf = "(environment | async).show" class="color-bar"></div>

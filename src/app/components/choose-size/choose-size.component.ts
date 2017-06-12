@@ -14,7 +14,7 @@ import { gridSettings } from '../../actions/grid-settings';
   templateUrl: './choose-size.component.html',
   styleUrls: ['./choose-size.component.scss']
 })
-export class ChooseSizeComponent implements OnInit {
+export class ChooseSizeComponent {
   gridSettings;
   changeGridSettings$ = new Subject();
 
@@ -29,10 +29,6 @@ export class ChooseSizeComponent implements OnInit {
     .subscribe((action)=>{
       store.dispatch(action)
     })
-
-  }
-
-  ngOnInit() {
   }
 
 }

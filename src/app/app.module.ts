@@ -7,7 +7,6 @@ import { PixelGridModule } from './components/pixel-grid/pixel-grid.module';
 import { ChooseSizeModule } from './components/choose-size/choose-size.module';
 
 import { AppComponent } from './app.component';
-import { ShowHideBarComponent } from './show-hide-bar/show-hide-bar.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 
 import { StoreModule } from '@ngrx/store';
@@ -19,8 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ShowHideBarComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
