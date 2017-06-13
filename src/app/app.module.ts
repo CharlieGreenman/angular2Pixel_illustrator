@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { ColorPickerModule } from './components/color-picker/color-picker.module';
+
 import { PixelGridModule } from './components/pixel-grid/pixel-grid.module';
 import { ChooseSizeModule } from './components/choose-size/choose-size.module';
 
@@ -24,8 +24,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ColorPickerModule,
-    PixelGridModule,
     ChooseSizeModule,
     StoreModule.provideStore({environment, colors, gridSettings}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
