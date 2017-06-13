@@ -25,9 +25,6 @@ export class PixelGridComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if(!this.canvas){
-      return;
-    }
     let c = this.canvas.nativeElement;
     this.context = c.getContext('2d');
 

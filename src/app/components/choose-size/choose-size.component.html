@@ -36,3 +36,5 @@
     </div>
   </div>
 </form>
+
+<app-pixel-grid *ngIf="(gridSettings | async).initGrid" [row]="20" [column]="20" [pixelSize]="10"></app-pixel-grid>
