@@ -1,3 +1,42 @@
 $color-1: #82998F;
 $color-2: #5FBF79;
 $color-3: #BF975F;
+
+.ChooseSize{
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+  background: #333333;
+  max-width: 300px;
+}
+
+.ChooseSize_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ChooseSize_label {
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.ChooseSize_label--row {
+  background: #82998F;
+}
+
+.ChooseSize_label--pixel {
+  background: #5FBF79;
+}
+
+.ChooseSize_label--column {
+  background: #BF975F;
+}
+
+button {
+  border: 0;
+  background: black;
+  height: 20px;
+  color: white;
+  font-size: 16px;
+}

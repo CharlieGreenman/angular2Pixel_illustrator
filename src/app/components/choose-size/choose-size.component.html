@@ -1,36 +1,34 @@
-<p>
-  choose-size works!
-</p>
-
 <form>
   <div class = "ChooseSize">
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_column">
-          <label> Column </label>
-          <input type="number" value="{{(gridSettings | async).column }}"
+          <label class = "ChooseSize_label"> Column </label>
+          <input class = "ChooseSize_input ChooseSize_input--column"
+          type="number" value="{{(gridSettings | async).column }}"
            #columnCount/>
       </div>
       <div class = "ChooseSize_column">
-        <label> Row </label>
-        <input type="number" value="{{(gridSettings | async).row }}"
+        <label class = "ChooseSize_label ChooseSize_label--row"> Row </label>
+        <input class = "ChooseSize_input ChooseSize_input--row"
+        type="number" value="{{(gridSettings | async).row }}"
         #rowCount/>
       </div>
     </div>
     <div class = "ChooseSize_row">
       <div class = "ChooseSize_row">
         <div class = "ChooseSize_column">
-          <label> Pixel Size </label>
-          <input type="number" value="{{(gridSettings | async).pixelSize }}"
+          <label class = "ChooseSize_label ChooseSize_label--pixel"> Pixel Size </label>
+          <input class = "ChooseSize_input ChooseSize_input--pixel" type="number" value="{{(gridSettings | async).pixelSize }}"
           #pixelSize/>
         </div>
-        <div class = "ChooseSize_column">
+        <div class = "ChooseSize_column ChooseSize_label--column">
           <button type="button" (click)="changeGridSettings$.next(
           {
             columnCount: columnCount.value,
             rowCount: rowCount.value,
             pixelSize: pixelSize.value
           }
-           )" ></button>
+           )" >Initialize Grid</button>
         </div>
       </div>
     </div>
