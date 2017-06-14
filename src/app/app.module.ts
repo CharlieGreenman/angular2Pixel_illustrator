@@ -15,10 +15,12 @@ import { colors } from './reducers/color-picker';
 import { gridSettings } from './reducers/grid-settings';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { GridIllustratorComponent } from './components/grid-illustrator/grid-illustrator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GridIllustratorComponent
   ],
   imports: [
     BrowserModule,
