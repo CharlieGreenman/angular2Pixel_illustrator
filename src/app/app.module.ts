@@ -7,7 +7,6 @@ import { GridIllustratorModule } from './components/grid-illustrator/grid-illust
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 
 import { StoreModule } from '@ngrx/store';
 import { environment } from './reducers/show-hide';
