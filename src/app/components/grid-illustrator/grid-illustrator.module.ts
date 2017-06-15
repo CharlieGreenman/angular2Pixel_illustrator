@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { PixelGridModule } from '../pixel-grid/pixel-grid.module';
+import { ColorPickerModule } from '../color-picker/color-picker.module';
+import { ChooseSizeModule } from '../choose-size/choose-size.module';
+
+import { GridIllustratorComponent } from './grid-illustrator.component';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PixelGridModule,
+    ColorPickerModule,
+    ChooseSizeModule
   ],
-  declarations: []
+  declarations: [
+    GridIllustratorComponent
+  ],
+  exports: [
+    GridIllustratorComponent
+  ],
+  providers: []
 })
 export class GridIllustratorModule { }

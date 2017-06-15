@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { PixelGridModule } from './components/pixel-grid/pixel-grid.module';
-import { ChooseSizeModule } from './components/choose-size/choose-size.module';
+import { GridIllustratorModule } from './components/grid-illustrator/grid-illustrator.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +25,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ChooseSizeModule,
+    GridIllustratorModule,
     StoreModule.provideStore({environment, colors, gridSettings}),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
