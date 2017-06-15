@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-grid-illustrator',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid-illustrator.component.scss']
 })
 export class GridIllustratorComponent implements OnInit {
+  gridSettings;
 
-  constructor() { }
+  constructor(store: Store<any>) {
+    this.gridSettings = store.select('gridSettings');
+  }
 
   ngOnInit() {
   }
