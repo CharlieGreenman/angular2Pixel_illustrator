@@ -1,4 +1,6 @@
-<app-choose-size *ngIf="!(gridSettings | async).initGrid"></app-choose-size>
-<app-code-box *ngIf="(gridSettings | async).initGrid"></app-code-box>
-<app-color-picker *ngIf="(gridSettings | async).initGrid"></app-color-picker>
-<app-pixel-grid *ngIf="(gridSettings | async).initGrid" [row]="20" [column]="20" [pixelSize]="10"></app-pixel-grid>
+<div class = "GridIllustrator">
+  <app-choose-size *ngIf="!(gridSettings | async).initGrid"></app-choose-size>
+  <app-code-box *ngIf="(gridSettings | async).initGrid"></app-code-box>
+  <app-color-picker *ngIf="(gridSettings | async).initGrid"></app-color-picker>
+  <app-pixel-grid *ngIf="(gridSettings | async).initGrid" [row]="20" [column]="20" [pixelSize]="10"></app-pixel-grid>
+</div>   
