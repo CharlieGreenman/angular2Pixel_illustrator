@@ -14,10 +14,12 @@ import { colors } from './reducers/color-picker';
 import { gridSettings } from './reducers/grid-settings';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CodeBoxComponent } from './components/code-box/code-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CodeBoxComponent
   ],
   imports: [
     BrowserModule,
