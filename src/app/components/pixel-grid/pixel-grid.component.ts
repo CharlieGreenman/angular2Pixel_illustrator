@@ -43,6 +43,9 @@ export class PixelGridComponent implements AfterViewInit {
       this.drawGrid();
     });
   }
+  handleGridClick() {
+    console.log('grid has been clicked on');
+  }
 
   drawGrid() {
     var ctx = this.context;
