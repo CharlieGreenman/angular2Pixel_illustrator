@@ -43,8 +43,14 @@ export class PixelGridComponent implements AfterViewInit {
       this.drawGrid();
     });
   }
-  handleGridClick() {
-    console.log('grid has been clicked on');
+  handleGridClick(e) {
+    e = e || window.event;
+
+    let xVal: number = Math.floor(e.offsetX === undefined ? e.layerX : e.offsetX / this.pixelSize) * this.pixelSize;
+    let yVal: number = Math.floor(e.offsetY === undefined ? e.layerY : e.offsetY / this.pixelSize) * this.pixelSize;
+
+    console.log('xVal: ' + xVal);
+    console.log('yVal: ' + yVal);
   }
 
   drawGrid() {
