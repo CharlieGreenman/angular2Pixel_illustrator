@@ -2,6 +2,8 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular
 import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
+import { determineCoordinate } from './helpers/pixel-grid-helper';
+
 @Component({
   selector: 'app-pixel-grid',
   templateUrl: './pixel-grid.component.html',
@@ -46,8 +48,8 @@ export class PixelGridComponent implements AfterViewInit {
   handleGridClick(e) {
     e = e || window.event;
 
-    let xVal: number = Math.floor(e.offsetX === undefined ? e.layerX : e.offsetX / this.pixelSize) * this.pixelSize;
-    let yVal: number = Math.floor(e.offsetY === undefined ? e.layerY : e.offsetY / this.pixelSize) * this.pixelSize;
+    let xVal: number = determineCoordinate(event, 'x');
+    let yVal: number = determineCoordinate(event, 'y');
 
     var imgData = this.context.getImageData(Math.floor(e.offsetX / this.pixelSize) * this.pixelSize + 1,
             Math.floor(e.offsetY / this.pixelSize) * this.pixelSize + 1,
