@@ -10,6 +10,5 @@ function determinePixelOffset(event, pixelSize, direction): number {
 export function determinePixelRGB(ctx, event, pixelSize): string {
   return ctx.getImageData(determinePixelOffset(event, pixelSize, 'X'),
             determinePixelOffset(event, pixelSize, 'Y'),
-            elem.s.pixSize - 2, elem.s.pixSize - 2);
-
+            pixelSize - 2, pixelSize - 2);
 }
