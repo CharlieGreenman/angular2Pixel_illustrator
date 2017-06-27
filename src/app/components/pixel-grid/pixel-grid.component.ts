@@ -45,19 +45,19 @@ export class PixelGridComponent implements AfterViewInit {
       this.drawGrid();
     });
   }
-  handleGridClick(e) {
-    e = e || window.event;
+  handleGridClick(event) {
+    event = event || window.event;
 
-    let xVal: number = determineCoordinate(event, 'x');
-    let yVal: number = determineCoordinate(event, 'y');
+    let xVal: number = determineCoordinate(event, 'X', this.pixelSize);
+    let yVal: number = determineCoordinate(event, 'Y', this.pixelSize);
 
-    var imgData = this.context.getImageData(Math.floor(e.offsetX / this.pixelSize) * this.pixelSize + 1,
-            Math.floor(e.offsetY / this.pixelSize) * this.pixelSize + 1,
-            this.pixelSize - 2, this.pixelSize - 2);
+    // var imgData = this.context.getImageData(Math.floor(e.offsetX / this.pixelSize) * this.pixelSize + 1,
+    //         Math.floor(e.offsetY / this.pixelSize) * this.pixelSize + 1,
+    //         this.pixelSize - 2, this.pixelSize - 2);
 
     console.log('xVal: ' + xVal);
     console.log('yVal: ' + yVal);
-    console.log(`imgData: ${imgData[0]}, ${imgData[1]}, ${imgData[2]}`);
+    // console.log(`imgData: ${imgData[0]}, ${imgData[1]}, ${imgData[2]}`);
   }
 
   drawGrid() {

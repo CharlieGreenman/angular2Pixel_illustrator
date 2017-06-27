@@ -1,6 +1,7 @@
-export function determineCoordinate(event, direction): number {
-  event = event || window.event;
-  return Math.floor(event.offsetX === undefined ? event.layer[direction] : event.offset[direction] / this.pixelSize) * this.pixelSize;
+export function determineCoordinate(event, direction, pixelSize): number {
+  return Math.floor(event[`offset${direction}`] === undefined ?
+    event[`layer${direction}`]:
+    event[`offset${direction}`] / pixelSize) * pixelSize;
 }
 
 function determinePixelOffset(event, pixelSize, direction): number {
