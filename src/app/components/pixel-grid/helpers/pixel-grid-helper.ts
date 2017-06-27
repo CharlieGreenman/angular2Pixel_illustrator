@@ -5,7 +5,7 @@ export function determineCoordinate(event, direction, pixelSize): number {
 }
 
 function determinePixelOffset(event, pixelSize, direction): number {
-  return Math.floor(event.offset[direction] / pixelSize) * pixelSize + 1;
+  return Math.floor(event[`offset${direction}`] / pixelSize) * pixelSize + 1;
 }
 
 export function determinePixelRGB(ctx, event, pixelSize): string {
