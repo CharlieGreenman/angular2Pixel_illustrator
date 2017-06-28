@@ -13,3 +13,11 @@ export function determinePixelRGB(ctx, event, pixelSize): number[] {
             determinePixelOffset(event, pixelSize, 'Y'),
             pixelSize - 2, pixelSize - 2);
 }
+
+export function drawPixelOnGrid(ctx, event, pixelSize) {
+  return ctx.fillRect(determinePixelOffset(event, pixelSize, 'X'),
+            determinePixelOffset(event, pixelSize, 'Y'),
+            //accomodate for 2 px border
+            //need to put in a variable down the line
+            pixelSize - 2, pixelSize - 2);
+}
