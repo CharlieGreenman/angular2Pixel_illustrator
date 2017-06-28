@@ -21,3 +21,11 @@ export function drawPixelOnGrid(ctx, event, pixelSize) {
             //need to put in a variable down the line
             pixelSize - 2, pixelSize - 2);
 }
+
+export function removePixelFromGrid(ctx, event, pixelSize) {
+  return ctx.clearRect(determinePixelOffset(event, pixelSize, 'X'),
+            determinePixelOffset(event, pixelSize, 'Y'),
+            //accomodate for 2 px border
+            //need to put in a variable down the line
+            pixelSize - 2, pixelSize - 2);
+}

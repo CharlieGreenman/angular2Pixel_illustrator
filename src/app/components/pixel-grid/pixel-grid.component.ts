@@ -47,11 +47,12 @@ export class PixelGridComponent implements AfterViewInit {
   }
   handleGridClick(event) {
     event = event || window.event;
-
+    this.context.fillStyle = this.pixelColor;
     let xVal: number = determineCoordinate(event, 'X', this.pixelSize);
     let yVal: number = determineCoordinate(event, 'Y', this.pixelSize);
     var imgData = determinePixelRGB(this.context, event, this.pixelSize);
 
+    drawPixelOnGrid(this.context, event, this.pixelSize);
   }
 
   drawGrid() {
