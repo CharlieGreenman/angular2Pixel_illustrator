@@ -8,7 +8,7 @@ function determinePixelOffset(event, pixelSize, direction): number {
   return Math.floor(event[`offset${direction}`] / pixelSize) * pixelSize + 1;
 }
 
-export function determinePixelRGB(ctx, event, pixelSize): string {
+export function determinePixelRGB(ctx, event, pixelSize): number[] {
   return ctx.getImageData(determinePixelOffset(event, pixelSize, 'X'),
             determinePixelOffset(event, pixelSize, 'Y'),
             pixelSize - 2, pixelSize - 2);

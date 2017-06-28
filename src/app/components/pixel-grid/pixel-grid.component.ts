@@ -2,7 +2,7 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular
 import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { determineCoordinate } from './helpers/pixel-grid-helper';
+import { determineCoordinate, determinePixelRGB } from './helpers/pixel-grid-helper';
 
 @Component({
   selector: 'app-pixel-grid',
@@ -53,13 +53,11 @@ export class PixelGridComponent implements AfterViewInit {
 
     console.log('this.context.getImageData: ' + this.context.getImageData(10,10,10,10));
 
-    var imgData = this.context.getImageData(Math.floor(event.offsetX / this.pixelSize) * this.pixelSize + 1,
-            Math.floor(event.offsetY / this.pixelSize) * this.pixelSize + 1,
-            this.pixelSize - 2, this.pixelSize - 2);
+    var imgData = determinePixelRGB(this.context, event, this.pixelSize);
 
     console.log('xVal: ' + xVal);
     console.log('yVal: ' + yVal);
-    console.log(`imgData: ${JSON.stringify(imgData, null, 2)}`);
+    console.log(`imgData: ${JSON.stringify(imgData.data[0], null, 2)}`);
   }
 
   drawGrid() {
