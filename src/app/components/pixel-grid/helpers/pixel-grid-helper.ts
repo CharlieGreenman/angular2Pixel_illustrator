@@ -30,6 +30,14 @@ export function removePixelFromGrid(ctx, event, pixelSize) {
             pixelSize - 2, pixelSize - 2);
 }
 
+export function isCurrentPixelColor(ctx, event, pixelSize) {
+  return ctx.clearRect(determinePixelOffset(event, pixelSize, 'X'),
+            determinePixelOffset(event, pixelSize, 'Y'),
+            //accomodate for 2 px border
+            //need to put in a variable down the line
+            pixelSize - 2, pixelSize - 2);
+}
+
 // this is a one off function, not going to create smaller functions
 // going to keep as is
 export function drawGrid(ctx, pixelSize, column, row, backgroundColor) {
@@ -40,5 +48,22 @@ export function drawGrid(ctx, pixelSize, column, row, backgroundColor) {
           ctx.fillStyle = pixelSize;
           ctx.fillRect(x * pixelSize + 1, y * pixelSize + 1, pixelSize - 2, pixelSize - 2);
       }
+  }
+}
+
+export function determineIfSamePixelColor(imgData, colors) {
+  console.log('imgData.data[0]: ' + imgData.data[0]);
+  console.log('parseFloat(colors.pixelRed): ' + colors.pixelRed);
+
+  console.log('imgData.data[1]: ' + imgData.data[1]);
+  console.log('imgData.data[2]: ' + imgData.data[2]);
+
+  if(imgData.data[0] === parseFloat(colors.pixelRed) &&
+     imgData.data[1] === parseFloat(colors.pixelGreen) &&
+     imgData.data[2] === parseFloat(colors.pixelBlue)) {
+       return true;
+  }
+  else {
+    return false;
   }
 }

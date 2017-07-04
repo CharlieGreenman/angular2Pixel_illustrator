@@ -2,8 +2,8 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular
 import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { determineCoordinate, determinePixelRGB, drawPixelOnGrid, drawGrid
- } from './helpers/pixel-grid-helper';
+import { determineCoordinate, determinePixelRGB, drawPixelOnGrid, drawGrid,
+  determineIfSamePixelColor} from './helpers/pixel-grid-helper';
 
 @Component({
   selector: 'app-pixel-grid',
@@ -44,6 +44,7 @@ export class PixelGridComponent implements AfterViewInit {
     this.colors.subscribe((colors)=>{
       this.pixelColor = colors.pixelHex;
       this.backgroundColor = colors.backgroundHex;
+      this.colors = colors;
     });
   }
 
@@ -52,8 +53,10 @@ export class PixelGridComponent implements AfterViewInit {
     this.context.fillStyle = this.pixelColor;
     let xVal: number = determineCoordinate(event, 'X', this.pixelSize);
     let yVal: number = determineCoordinate(event, 'Y', this.pixelSize);
-    var imgData = determinePixelRGB(this.context, event, this.pixelSize);
-
+    let imgData = determinePixelRGB(this.context, event, this.pixelSize);
+    if( determineIfSamePixelColor(imgData, this.colors) === true) {
+      console.log('color already exists');
+    }
     drawPixelOnGrid(this.context, event, this.pixelSize);
   }
 
