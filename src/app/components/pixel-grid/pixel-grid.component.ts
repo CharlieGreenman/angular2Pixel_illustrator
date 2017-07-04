@@ -42,7 +42,6 @@ export class PixelGridComponent implements AfterViewInit {
     this.colors.subscribe((colors)=>{
       this.pixelColor = colors.pixelHex;
       this.backgroundColor = colors.backgroundHex;
-      this.drawGrid();
     });
   }
   handleGridClick(event) {
