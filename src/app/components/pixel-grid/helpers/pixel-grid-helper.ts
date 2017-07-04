@@ -29,3 +29,16 @@ export function removePixelFromGrid(ctx, event, pixelSize) {
             //need to put in a variable down the line
             pixelSize - 2, pixelSize - 2);
 }
+
+// this is a one off function, not going to create smaller functions
+// going to keep as is
+export function drawGrid(ctx, pixelSize, column, row, backgroundColor) {
+  for(var x = 0; x < column; x++) {
+      for(var y = 0; y < row; y++) {
+          ctx.strokeStyle = backgroundColor;
+          ctx.strokeRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+          ctx.fillStyle = pixelSize;
+          ctx.fillRect(x * pixelSize + 1, y * pixelSize + 1, pixelSize - 2, pixelSize - 2);
+      }
+  }
+}

@@ -2,7 +2,8 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild } from '@angular
 import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { determineCoordinate, determinePixelRGB, drawPixelOnGrid } from './helpers/pixel-grid-helper';
+import { determineCoordinate, determinePixelRGB, drawPixelOnGrid, drawGrid
+ } from './helpers/pixel-grid-helper';
 
 @Component({
   selector: 'app-pixel-grid',
@@ -36,7 +37,8 @@ export class PixelGridComponent implements AfterViewInit {
       this.column = gridSettings.column;
       c.width = gridSettings.pixelSize * gridSettings.row;
       c.height = gridSettings.pixelSize * gridSettings.column;
-      this.drawGrid();
+      drawGrid(this.context, this.pixelSize, this.row, this.column,
+        this.backgroundColor);
     });
 
     this.colors.subscribe((colors)=>{
@@ -44,6 +46,7 @@ export class PixelGridComponent implements AfterViewInit {
       this.backgroundColor = colors.backgroundHex;
     });
   }
+
   handleGridClick(event) {
     event = event || window.event;
     this.context.fillStyle = this.pixelColor;
@@ -52,18 +55,6 @@ export class PixelGridComponent implements AfterViewInit {
     var imgData = determinePixelRGB(this.context, event, this.pixelSize);
 
     drawPixelOnGrid(this.context, event, this.pixelSize);
-  }
-
-  drawGrid() {
-    var ctx = this.context;
-    for(var x = 0; x < this.column; x++) {
-        for(var y = 0; y < this.row; y++) {
-            ctx.strokeStyle = this.backgroundColor;
-            ctx.strokeRect(x * this.pixelSize, y * this.pixelSize, this.pixelSize, this.pixelSize);
-            ctx.fillStyle = this.pixelColor;
-            ctx.fillRect(x * this.pixelSize + 1, y * this.pixelSize + 1, this.pixelSize - 2, this.pixelSize - 2);
-        }
-    }
   }
 
 }
