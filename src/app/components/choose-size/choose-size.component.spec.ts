@@ -5,6 +5,9 @@ import { DebugElement } from '@angular/core';
 
 import { ChooseSizeComponent } from './choose-size.component';
 import { StoreModule } from '@ngrx/store';
+import { environment } from '../../reducers/show-hide';
+import { colors } from '../../reducers/color-picker';
+import { gridSettings } from '../../reducers/grid-settings';
 
 describe('ChooseSizeComponent', () => {
   let component: ChooseSizeComponent;
@@ -12,7 +15,9 @@ describe('ChooseSizeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule.provideStore({})],
+      imports: [StoreModule.provideStore({
+        environment, colors, gridSettings
+      })],
       declarations: [ ChooseSizeComponent ],
       exports: [ChooseSizeComponent],
       providers: []
