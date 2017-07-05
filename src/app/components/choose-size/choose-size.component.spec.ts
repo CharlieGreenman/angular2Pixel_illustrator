@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ChooseSizeComponent } from './choose-size.component';
+import { StoreModule } from '@ngrx/store';
 
 describe('ChooseSizeComponent', () => {
   let component: ChooseSizeComponent;
@@ -11,6 +12,7 @@ describe('ChooseSizeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [StoreModule.provideStore({})],
       declarations: [ ChooseSizeComponent ],
       exports: [ChooseSizeComponent],
       providers: []
