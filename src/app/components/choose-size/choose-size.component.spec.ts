@@ -11,7 +11,9 @@ describe('ChooseSizeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChooseSizeComponent ]
+      declarations: [ ChooseSizeComponent ],
+      exports: [ChooseSizeComponent],
+      providers: []
     })
     .compileComponents();
   }));
@@ -22,7 +24,7 @@ describe('ChooseSizeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', async(() => {
     expect(component).toBeTruthy();
-  });
+  }));
 });
