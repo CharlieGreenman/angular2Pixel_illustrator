@@ -31,7 +31,7 @@ describe('ChooseSizeComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', async(() => {
+  it('should create', async(() => {
     expect(component).toBeTruthy();
   }));
 });
