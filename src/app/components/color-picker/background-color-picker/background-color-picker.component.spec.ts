@@ -5,12 +5,20 @@ import { DebugElement } from '@angular/core';
 
 import { BackgroundColorPickerComponent } from './background-color-picker.component';
 
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../../../reducers/show-hide';
+import { colors } from '../../../reducers/color-picker';
+import { gridSettings } from '../../../reducers/grid-settings';
+
 describe('BackgroundColorPickerComponent', () => {
   let component: BackgroundColorPickerComponent;
   let fixture: ComponentFixture<BackgroundColorPickerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [StoreModule.provideStore({
+        environment, colors, gridSettings
+      })],
       declarations: [ BackgroundColorPickerComponent ]
     })
     .compileComponents();
