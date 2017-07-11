@@ -8,18 +8,30 @@ import { ColorPickerModule } from '../color-picker/color-picker.module';
 import { ChooseSizeModule } from '../choose-size/choose-size.module';
 import { CodeBoxModule } from '../code-box/code-box.module';
 
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../../reducers/show-hide';
+import { colors } from '../../reducers/color-picker';
+import { gridSettings } from '../../reducers/grid-settings';
+
 import { GridIllustratorComponent } from './grid-illustrator.component';
 
 describe('GridIllustratorComponent', () => {
   let component: GridIllustratorComponent;
   let fixture: ComponentFixture<GridIllustratorComponent>;
 
+  imports: [StoreModule.provideStore({
+    environment, colors, gridSettings
+  })],
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [PixelGridModule,
       ColorPickerModule,
       ChooseSizeModule,
-      CodeBoxModule],
+      CodeBoxModule,
+      StoreModule.provideStore({
+        environment, colors, gridSettings
+      })],
       declarations: [ GridIllustratorComponent ]
     })
     .compileComponents();

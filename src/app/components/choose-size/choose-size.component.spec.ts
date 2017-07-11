@@ -9,6 +9,7 @@ import { environment } from '../../reducers/show-hide';
 import { colors } from '../../reducers/color-picker';
 import { gridSettings } from '../../reducers/grid-settings';
 
+
 describe('ChooseSizeComponent', () => {
   let component: ChooseSizeComponent;
   let fixture: ComponentFixture<ChooseSizeComponent>;
