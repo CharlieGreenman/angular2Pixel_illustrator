@@ -19,10 +19,6 @@ describe('GridIllustratorComponent', () => {
   let component: GridIllustratorComponent;
   let fixture: ComponentFixture<GridIllustratorComponent>;
 
-  imports: [StoreModule.provideStore({
-    environment, colors, gridSettings
-  })],
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [PixelGridModule,
@@ -43,7 +39,7 @@ describe('GridIllustratorComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
