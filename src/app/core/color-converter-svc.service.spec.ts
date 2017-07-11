@@ -13,4 +13,12 @@ describe('ColorConverterSvcService', () => {
   it('should ...', inject([ColorConverterSvcService], (service: ColorConverterSvcService) => {
     expect(service).toBeTruthy();
   }));
+
+  describe('functionality for the hexToRGB Function', function() {
+    it('should convert hex to rgb.', inject([ColorConverterSvcService],
+      (service: ColorConverterSvcService) => {
+
+      expect(service.hexToRGB('#123123')).toEqual('123');
+    });
+  });
 });
