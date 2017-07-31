@@ -31,4 +31,9 @@ describe('ColorConverterSvcService', () => {
       expect(service.hexToRgb('#fff')).toEqual({ r: 255, g: 255, b: 255 });
     });
 
+    it('should convert shorthand black hex to proper equivalent in rgb.', inject([ColorConverterSvcService],
+      (service: ColorConverterSvcService) => {
+      expect(service.hexToRgb('#000')).toEqual({ r: 0, g: 0, b: 0 });
+    });
+
   });
