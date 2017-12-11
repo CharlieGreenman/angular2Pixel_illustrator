@@ -16,9 +16,24 @@ describe('ColorConverterSvcService', () => {
   }));
 
   describe('functionality for the hexToRGB Function', function() {
-    fit('should convert hex to rgb.', inject([ColorConverterSvcService],
+    it('should convert white hex to white equivalent in rgb.', inject([ColorConverterSvcService],
       (service: ColorConverterSvcService) => {
-
-      expect(service.hexToRgb('#123123')).toEqual('123'));
+      expect(service.hexToRgb('#ffffff')).toEqual({ r: 255, g: 255, b: 255 });
     });
+
+    it('should convert black hex to black equivalent in rgb.', inject([ColorConverterSvcService],
+      (service: ColorConverterSvcService) => {
+      expect(service.hexToRgb('#000000')).toEqual({ r: 0, g: 0, b: 0 });
+    });
+
+    it('should convert shorthand white hex to proper equivalent in rgb.', inject([ColorConverterSvcService],
+      (service: ColorConverterSvcService) => {
+      expect(service.hexToRgb('#fff')).toEqual({ r: 255, g: 255, b: 255 });
+    });
+
+    it('should convert shorthand black hex to proper equivalent in rgb.', inject([ColorConverterSvcService],
+      (service: ColorConverterSvcService) => {
+      expect(service.hexToRgb('#000')).toEqual({ r: 0, g: 0, b: 0 });
+    });
+
   });
