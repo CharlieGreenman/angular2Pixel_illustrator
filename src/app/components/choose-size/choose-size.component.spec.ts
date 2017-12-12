@@ -20,7 +20,6 @@ describe('ChooseSizeComponent', () => {
         environment, colors, gridSettings
       })],
       declarations: [ ChooseSizeComponent ],
-      exports: [ChooseSizeComponent],
       providers: []
     })
     .compileComponents();
