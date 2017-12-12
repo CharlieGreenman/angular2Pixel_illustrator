@@ -1,1 +1,3 @@
-<app-grid-illustrator></app-grid-illustrator>
+<div class = "AppContainer" [ngStyle]="{'backgroundColor': (colors | async).backgroundHex}">
+  <app-grid-illustrator></app-grid-illustrator>
+</div>
