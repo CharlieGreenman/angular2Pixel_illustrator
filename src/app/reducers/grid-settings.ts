@@ -1,4 +1,5 @@
 import * as types from "../constants/ActionTypes";
+import {ActionReducer, Action} from "@ngrx/store";
 
 export interface InitialGridSettingsState {
   column: number;
