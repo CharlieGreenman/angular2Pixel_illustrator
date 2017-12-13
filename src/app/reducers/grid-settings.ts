@@ -15,7 +15,8 @@ const initialGridSettings: InitialGridSettingsState = {
     initGrid: false
 };
 
-export const gridSettings = (state = initialGridSettings, action) => {
+export const gridSettings: ActionReducer<InitialGridSettingsState> = (state = initialGridSettings, action: Action)
+  : InitialGridSettingsState => {
   switch(action.type) {
   case types.GRID_SETTINGS:
       return Object.assign({}, state, {
