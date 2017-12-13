@@ -1,4 +1,6 @@
-export const HIDE = 'hide';
+export type HIDE = 'hide';
+export const HIDE: HIDE = 'hide';
+export type SHOW = 'show';
 export const SHOW = 'show';
 
 export const INIT_APP = "INIT_APP";
