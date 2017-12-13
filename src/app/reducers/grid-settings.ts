@@ -20,9 +20,9 @@ export const gridSettings: ActionReducer<InitialGridSettingsState> = (state = in
   switch(action.type) {
   case types.GRID_SETTINGS:
       return Object.assign({}, state, {
-          column: Number(action.columnCount),
-          row: Number(action.rowCount),
-          pixelSize: Number(action.pixelSize),
+          column: Number(action.payload.columnCount),
+          row: Number(action.payload.rowCount),
+          pixelSize: Number(action.payload.pixelSize),
           initGrid: true
       });
   default:
