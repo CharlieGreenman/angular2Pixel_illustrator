@@ -8,9 +8,11 @@ import { Store } from '@ngrx/store';
 })
 export class GridIllustratorComponent implements OnInit {
   gridSettings;
+  colors;
 
   constructor(store: Store<any>) {
     this.gridSettings = store.select('gridSettings');
+    this.colors = store.select('colors');
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
-import * as types from "../constants/ActionTypes";
-import { hexToRgb, rgbToHex } from '../core/utils/color-converter';
+import * as types from '../constants/ActionTypes';
+import {hexToRgb, rgbToHex} from '../core/utils/color-converter';
 
 const initialColorState = {
     backgroundHex: "#191919",
