@@ -1,6 +1,10 @@
 import * as types from "../constants/ActionTypes";
 
-const initialGridSettings = {
+export interface initialGridSettingsState = {
+  column: number;
+};
+
+const initialGridSettings: initialGridSettingsState = {
     column: 20,
     row: 20,
     pixelSize: 20,
