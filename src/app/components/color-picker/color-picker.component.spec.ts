@@ -19,7 +19,7 @@ describe('ColorPickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule.provideStore({
+      imports: [StoreModule.forRoot({
         environment, colors, gridSettings
       })],
       declarations: [ BackgroundColorPickerComponent,
