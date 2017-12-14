@@ -10,7 +10,7 @@ export interface IcolorState {
   pixelRed: number;
   pixelBlue: number;
   pixelGreen: number;
-};
+}
 
 const colorState: IcolorState = {
   backgroundHex: '#191919',

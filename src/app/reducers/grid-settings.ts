@@ -6,7 +6,7 @@ export interface InitialGridSettingsState {
   row: number;
   pixelSize: number;
   initGrid: boolean;
-};
+}
 
 const initialGridSettings: InitialGridSettingsState = {
     column: 20,
