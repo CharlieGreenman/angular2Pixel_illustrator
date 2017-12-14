@@ -1,18 +1,29 @@
 import * as types from '../constants/ActionTypes';
 import {hexToRgb, rgbToHex} from '../core/utils/color-converter';
 
-const initialColorState = {
-    backgroundHex: "#191919",
-    backgroundRed: "25",
-    backgroundGreen: "25",
-    backgroundBlue: "25",
-    pixelHex: "#000000",
-    pixelRed: "25",
-    pixelBlue: "25",
-    pixelGreen: "25"
+export interface IcolorState {
+  backgroundHex: string,
+  backgroundRed: number,
+  backgroundGreen: number,
+  backgroundBlue: number,
+  pixelHex: string,
+  pixelRed: number,
+  pixelBlue: number,
+  pixelGreen: number
 };
 
-export const colors = (state = initialColorState, action) => {
+const colorState: IcolorState = {
+    backgroundHex: '#191919',
+    backgroundRed: 25,
+    backgroundGreen: 25,
+    backgroundBlue: 25,
+    pixelHex: '#000000',
+    pixelRed: 25,
+    pixelBlue: 25,
+    pixelGreen: 25
+};
+
+export const colors = (state = colorState, action) => {
   switch(action.type) {
     case types.BACKGROUND_COLOR:
       return Object.assign({}, state, {
