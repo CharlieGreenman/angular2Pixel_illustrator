@@ -25,8 +25,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpModule,
     AppRoutingModule,
     GridIllustratorModule,
-    StoreModule.provideStore({environment, colors, gridSettings}),
-    StoreDevtoolsModule.instrumentOnlyWithExtension({
+    StoreModule.forRoot({environment, colors, gridSettings}),
+    StoreDevtoolsModule.instrument({
       maxAge: 5
     })
   ],

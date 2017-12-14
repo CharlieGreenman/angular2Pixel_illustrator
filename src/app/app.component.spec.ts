@@ -21,7 +21,7 @@ describe('AppComponent', () => {
         AppRoutingModule,
         GridIllustratorModule,
         RouterModule,
-        StoreModule.provideStore({environment, colors, gridSettings})
+        StoreModule.forRoot({environment, colors, gridSettings})
       ],
       declarations: [
         AppComponent
