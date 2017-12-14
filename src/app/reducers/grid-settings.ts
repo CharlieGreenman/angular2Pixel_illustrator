@@ -15,6 +15,7 @@ const initialGridSettings: InitialGridSettingsState = {
     initGrid: false
 };
 
+// For somereason column, row, and pixelSize here, are not conforming to interface. Look into.
 export const gridSettings: ActionReducer<InitialGridSettingsState> = (state = initialGridSettings, action: Action)
   : InitialGridSettingsState => {
   switch(action.type) {
