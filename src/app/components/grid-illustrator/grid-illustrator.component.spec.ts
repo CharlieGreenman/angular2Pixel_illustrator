@@ -25,7 +25,7 @@ describe('GridIllustratorComponent', () => {
       ColorPickerModule,
       ChooseSizeModule,
       CodeBoxModule,
-      StoreModule.provideStore({
+      StoreModule.forRoot({
         environment, colors, gridSettings
       })],
       declarations: [ GridIllustratorComponent ]
