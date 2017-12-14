@@ -1,4 +1,12 @@
 import * as types from "../constants/ActionTypes";
+import { Action } from '@ngrx/store';
+
+// export class gridSettings implements Action {
+//   readonly type = types.GRID_SETTINGS;
+// }
+
+export type All
+  = gridSettings;
 
 export function gridSettings(columnCount: number, rowCount: number, pixelSize: number) {
   return {
