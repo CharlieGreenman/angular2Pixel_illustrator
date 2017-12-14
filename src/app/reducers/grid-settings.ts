@@ -1,5 +1,6 @@
 import * as types from "../constants/ActionTypes";
 import {ActionReducer, Action} from "@ngrx/store";
+import { GridSettingActions } from '../actions/grid-settings';
 
 export interface InitialGridSettingsState {
   column: number;
@@ -16,7 +17,7 @@ const initialGridSettings: InitialGridSettingsState = {
 };
 
 // For somereason column, row, and pixelSize here, are not conforming to interface. Look into.
-export const gridSettings: ActionReducer<InitialGridSettingsState> = (state = initialGridSettings, action: Action)
+export const gridSettings: ActionReducer<InitialGridSettingsState> = (state = initialGridSettings, action: GridSettingActions)
   : InitialGridSettingsState => {
   switch(action.type) {
   case types.GRID_SETTINGS:
