@@ -23,7 +23,7 @@ export class ChooseSizeComponent {
 
     Observable.merge(
       this.changeGridSettings$.map((value: any) => (
-        gridSettings(value.columnCount, value.rowCount, value.pixelSize)
+        new gridSettings(value.columnCount, value.rowCount, value.pixelSize)
       ))
     )
     .subscribe((action)=>{
