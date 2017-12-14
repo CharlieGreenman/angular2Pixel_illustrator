@@ -2,14 +2,14 @@ import * as types from '../constants/ActionTypes';
 import {hexToRgb, rgbToHex} from '../core/utils/color-converter';
 
 export interface IcolorState {
-  backgroundHex: string,
-  backgroundRed: number,
-  backgroundGreen: number,
-  backgroundBlue: number,
-  pixelHex: string,
-  pixelRed: number,
-  pixelBlue: number,
-  pixelGreen: number
+  backgroundHex: string;
+  backgroundRed: number;
+  backgroundGreen: number;
+  backgroundBlue: number;
+  pixelHex: string;
+  pixelRed: number;
+  pixelBlue: number;
+  pixelGreen: number;
 };
 
 const colorState: IcolorState = {
