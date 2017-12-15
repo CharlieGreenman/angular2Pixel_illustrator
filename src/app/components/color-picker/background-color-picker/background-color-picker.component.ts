@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 
-import { ColorConverterSvcService } from '../../../core/color-converter-svc.service';
+import { ColorConverterSvcService } from '../../../core/color-converter.service';
 import { BackgroundColor, BackgroundColorRGB} from '../../../actions/color-picker';
 
 @Component({
