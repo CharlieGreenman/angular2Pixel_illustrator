@@ -37,8 +37,12 @@ describe('ColorConverterSvcService', () => {
   });
 
   describe('Functionality for the RGBToHex functionality', function() {
-    it('should convert rgb to hex',() => {
+    it('should convert rgb to hex if color is white',() => {
       expect(service.rgbToHex(255,255,255)).toEqual('#ffffff');
+    });
+
+    it('should convert rgb to hex if color is black',() => {
+      expect(service.rgbToHex(0,0,0)).toEqual('#000000');
     });
   });
 
