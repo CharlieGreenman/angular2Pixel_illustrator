@@ -2,7 +2,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ColorConverterSvcService } from '../color-converter.service';
+import { ColorConverterSvcService } from './color-converter.service';
 
 describe('ColorConverterSvcService', () => {
   let service: ColorConverterSvcService;
@@ -44,6 +44,12 @@ describe('ColorConverterSvcService', () => {
     it('should convert rgb to hex if color is black',() => {
       expect(service.rgbToHex(0,0,0)).toEqual('#000000');
     });
+
+    it('should convert rgb to hex if color is Dove Gray',() => {
+      expect(service.rgbToHex(111,111,111)).toEqual('#6f6f6f');
+    });
+
+
   });
 
   });
