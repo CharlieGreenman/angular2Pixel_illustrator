@@ -38,7 +38,7 @@ describe('ColorConverterSvcService', () => {
 
   describe('Functionality for the RGBToHex functionality', function() {
     it('should convert rgb to hex',() => {
-      expect('123').toEqual('hello');
+      expect(service.rgbToHex(255,255,255)).toEqual('#ffffff');
     });
   });
 
