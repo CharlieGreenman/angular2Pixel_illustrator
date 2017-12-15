@@ -2,7 +2,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ColorConverterSvcService } from './color-converter.service';
+import { ColorConverterSvcService } from '../color-converter.service';
 
 describe('ColorConverterSvcService', () => {
   let service: ColorConverterSvcService;
